@@ -15,5 +15,6 @@
   <x-layouts.nav />
   {{ $slot }}
   <x-layouts.footer />
+  <script src="{{ asset('js/select-ops.js') }}"></script>
 </body>
 </html>
