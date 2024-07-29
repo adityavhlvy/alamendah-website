@@ -1,3 +1,3 @@
-<div class="flex items-center justify-center border-4 border-dark-grey w-16 h-16 rounded-full bg-bright-grey">
+<div class="flex items-center justify-center border-4 border-dark-grey lg:w-16 lg:h-16 w-10 h-10 rounded-full bg-bright-grey">
     {{ $slot }}
 </div>
