@@ -11,9 +11,9 @@ selectElement.parentElement.addEventListener("click", function () {
     }
 });
 selectElement.addEventListener("focus", function () {
-    arrowElement.classList.add("rotate-180");
+    arrowElement.classList.add("rotate");
 });
 selectElement.addEventListener("blur", function () {
-    arrowElement.classList.remove("rotate-180");
+    arrowElement.classList.remove("rotate");
     clicked = false;
 });
