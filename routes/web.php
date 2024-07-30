@@ -17,6 +17,9 @@ Route::controller(App\Http\Controllers\UserController::class)->name('auth.')->gr
     Route::get('/signin', 'signin')->name('signin');
     Route::get('/signup', 'signup')->name('signup');
 });
+Route::controller(App\Http\Controllers\Travel::class)->name('main.')->group(function () {
+    Route::get('/home', 'index')->name('index');
+});
 Route::get('/', function () {
-    return redirect()->route('auth.signin');
+    return redirect()->route('main.index');
 });

@@ -1,17 +1,17 @@
 <?php
 
-namespace App\View\Components\svg;
+namespace App\View\Components\activities\date;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class ArrowBottom extends Component
+class btn extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(public $color)
+    public function __construct()
     {
         //
     }
@@ -21,6 +21,6 @@ class ArrowBottom extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.svg.arrow-bottom');
+        return view('components.activities.date.btn');
     }
 }

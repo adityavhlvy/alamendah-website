@@ -19,6 +19,9 @@ export default {
                 "dark-grey": "#A9A9A9",
                 "bright-grey": "#D3D3D3",
             },
+            backgroundImage: {
+                "homepage-background": "url('/img/homepage-background.png')",
+            },
         },
     },
     plugins: [],

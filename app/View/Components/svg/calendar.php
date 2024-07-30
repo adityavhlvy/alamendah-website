@@ -6,12 +6,12 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class ArrowBottom extends Component
+class calendar extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(public $color)
+    public function __construct(public $width, public $height)
     {
         //
     }
@@ -21,6 +21,6 @@ class ArrowBottom extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.svg.arrow-bottom');
+        return view('components.svg.calendar');
     }
 }
