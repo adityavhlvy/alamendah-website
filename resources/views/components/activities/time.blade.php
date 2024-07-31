@@ -3,5 +3,4 @@
         <x-svg.clock :width="50" :height="50" />
     </div>
     <x-activities.time.format />
-    <input type="time" name="" id="" class="hidden">
 </div>

@@ -9,4 +9,5 @@
   <x-homepage.list-activities />
 
   {{-- section news & articles --}}
+  <x-homepage.articles />
 </x-layouts.app>

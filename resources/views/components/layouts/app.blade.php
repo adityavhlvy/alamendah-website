@@ -17,5 +17,6 @@
   <x-layouts.footer />
   <script src="{{ asset('js/select-ops.js') }}"></script>
   <script src="{{ asset('js/dropdown.js') }}"></script>
+  <script src="{{ asset('js/time.js') }}"></script>
 </body>
 </html>
