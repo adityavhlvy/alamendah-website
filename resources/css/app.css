@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 * {
     font-family: "Inter";
 }
@@ -11,4 +12,16 @@
 
 .rotate {
     @apply rotate-180;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    @apply h-[20px];
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    @apply rounded-xl bg-dark-grey border-4 border-solid border-transparent bg-clip-padding;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-blue-sky rounded-xl  w-[100px];
 }
