@@ -19,6 +19,7 @@ Route::controller(App\Http\Controllers\UserController::class)->name('auth.')->gr
 });
 Route::controller(App\Http\Controllers\Travel::class)->name('main.')->group(function () {
     Route::get('/home', 'index')->name('index');
+    Route::get('/activity', 'activity')->name('activity');
 });
 Route::get('/', function () {
     return redirect()->route('main.index');

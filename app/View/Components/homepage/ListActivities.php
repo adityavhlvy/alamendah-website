@@ -22,6 +22,87 @@ class ListActivities extends Component
                 "month" => "October",
                 "year" => "2024",
                 "clock"=> "07:00",
+                "img"=>"img/activity-1.png"
+            ],
+            [
+                "name"=>"Activity Name",
+                "price"=>"xx.000",
+                "date" => "21",
+                "month" => "October",
+                "year" => "2024",
+                "clock"=> "07:00",
+                "img"=>"img/activity-2.png"
+            ],
+            [
+                "name"=>"Activity Name",
+                "price"=>"xx.000",
+                "date" => "21",
+                "month" => "October",
+                "year" => "2024",
+                "clock"=> "07:00",
+                "img"=>"img/activity-3.png"
+            ],
+            [
+                "name"=>"Activity Name",
+                "price"=>"xx.000",
+                "date" => "21",
+                "month" => "October",
+                "year" => "2024",
+                "clock"=> "07:00",
+                "img"=>"img/activity.png"
+            ],
+            [
+                "name"=>"Activity Name",
+                "price"=>"xx.000",
+                "date" => "21",
+                "month" => "October",
+                "year" => "2024",
+                "clock"=> "07:00",
+                "img"=>"img/activity.png"
+            ],
+            [
+                "name"=>"Activity Name",
+                "price"=>"xx.000",
+                "date" => "21",
+                "month" => "October",
+                "year" => "2024",
+                "clock"=> "07:00",
+                "img"=>"img/activity.png"
+            ],
+            [
+                "name"=>"Activity Name",
+                "price"=>"xx.000",
+                "date" => "21",
+                "month" => "October",
+                "year" => "2024",
+                "clock"=> "07:00",
+                "img"=>"img/activity.png"
+            ],
+            [
+                "name"=>"Activity Name",
+                "price"=>"xx.000",
+                "date" => "21",
+                "month" => "October",
+                "year" => "2024",
+                "clock"=> "07:00",
+                "img"=>"img/activity.png"
+            ],
+            [
+                "name"=>"Activity Name",
+                "price"=>"xx.000",
+                "date" => "21",
+                "month" => "October",
+                "year" => "2024",
+                "clock"=> "07:00",
+                "img"=>"img/activity.png"
+            ],
+            [
+                "name"=>"Activity Name",
+                "price"=>"xx.000",
+                "date" => "21",
+                "month" => "October",
+                "year" => "2024",
+                "clock"=> "07:00",
                 "img"=>"img/activity.png"
             ],
             [

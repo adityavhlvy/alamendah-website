@@ -11,4 +11,9 @@ class Travel extends Controller
             'title' => 'Homepage'
         ]);
     }
+    public function activity() {
+        return view('activity', [
+            'title' => 'Activity'
+        ]);
+    }
 }
