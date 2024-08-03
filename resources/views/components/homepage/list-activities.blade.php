@@ -6,11 +6,7 @@
         </div>
         <x-listactivities.activities :$listactivities />
     @elseif(Request::routeIs('main.activity'))
-        <div class="flex flex-row overflow-hidden w-full rounded-3xl">
-            @foreach(array_slice($listactivities, 0, 3) as $activity)
-                <img src="{{ $activity['img'] }}" alt="">
-            @endforeach
-        </div>
+        <x-listactivities.header-all-activities :listactivities="array_slice($listactivities, 0, 3)"/>
         <x-listactivities.allactivities :$listactivities />
     @endif
     </div>

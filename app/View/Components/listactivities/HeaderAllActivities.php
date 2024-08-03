@@ -1,21 +1,19 @@
 <?php
 
-namespace App\View\Components\homepage;
+namespace App\View\Components\listactivities;
 
-use App\Models\Paket;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class ListActivities extends Component
+class HeaderAllActivities extends Component
 {
     /**
      * Create a new component instance.
      */
-    public $listactivities;
-    public function __construct()
+    public function __construct(public $listactivities)
     {
-        $this->listactivities = Paket::all()->toArray();
+        //
     }
 
     /**
@@ -23,6 +21,6 @@ class ListActivities extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.homepage.list-activities');
+        return view('components.listactivities.header-all-activities');
     }
 }

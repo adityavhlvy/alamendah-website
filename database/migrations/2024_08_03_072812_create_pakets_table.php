@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('pakets', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
-            $table->string('price');
+            $table->text('description');
+            $table->integer('price');
+            $table->string('img');
+            $table->text('slogan');
             $table->timestamps();
         });
     }

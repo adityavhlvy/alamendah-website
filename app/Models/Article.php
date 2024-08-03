@@ -14,11 +14,16 @@ class Article extends Model
         'title',
         'img',
     ];
-    protected $with = ['subarticles'];
+    protected $with = ['subarticles', 'authors'];
 
     public function subarticles() :HasMany
     {
         return $this->hasMany(Subarticle::class);
+    }
+
+    public function authors() :HasMany
+    {
+        return $this->hasMany(Author::class);
     }
 
     public function recent() :HasOne

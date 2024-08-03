@@ -14,6 +14,8 @@ class Paket extends Model
         'name',
         'description',
         'price',
+        'img',
+        'slogan',
     ];
     protected $with = [
         'paketactivities'

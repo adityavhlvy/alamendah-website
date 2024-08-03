@@ -25,3 +25,12 @@
 .custom-scrollbar::-webkit-scrollbar-thumb {
     @apply bg-blue-sky rounded-xl  w-[100px];
 }
+.-translate-0x {
+    @apply -translate-x-0 duration-300;
+}
+.-translate-1x {
+    @apply -translate-x-[100%] duration-300;
+}
+.-translate-2x {
+    @apply -translate-x-[200%] duration-300;
+}
