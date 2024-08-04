@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('price');
             $table->string('img');
             $table->text('slogan');
+            $table->integer('minimum_person');
             $table->timestamps();
         });
     }

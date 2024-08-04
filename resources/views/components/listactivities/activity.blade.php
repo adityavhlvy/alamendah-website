@@ -4,7 +4,7 @@
             <x-svg.forward />
         </div>
         <x-listactivities.description :$activity />
-        <a class="self-end justify-self-end col-start-3 col-end-4 row-start-3 row-end-4 rounded-full bg-white w-7 h-7 flex items-center justify-center">
+        <a href="{{ route('main.activity.show', ['id' => $activity['id']]) }}" class="self-end justify-self-end col-start-3 col-end-4 row-start-3 row-end-4 rounded-full bg-white w-7 h-7 flex items-center justify-center">
             <x-svg.arrow-bottom :color="'black'"/>
         </a>
     </div>

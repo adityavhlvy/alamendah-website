@@ -9,4 +9,4 @@
         <x-listactivities.header-all-activities :listactivities="array_slice($listactivities, 0, 3)"/>
         <x-listactivities.allactivities :$listactivities />
     @endif
-    </div>
+</div>

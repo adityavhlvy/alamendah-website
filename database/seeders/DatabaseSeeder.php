@@ -32,105 +32,120 @@ class DatabaseSeeder extends Seeder
                 "slogan"=>"Something of a catchy slogan about its travelling adventures",
                 "price"=>100000,
                 "description"=> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.",
-                "img"=>"img/activity-1.png"
+                "img"=>"img/activity-1.png",
+                'minimum_person' => 30,
             ],
             [
                 "name"=>"Activity Name",
                 "slogan"=>"Something of a catchy slogan about its travelling adventures",
                 "price"=>100000,
                 "description"=> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.",
-                "img"=>"img/activity-2.png"
+                "img"=>"img/activity-2.png",
+                'minimum_person' => 30,
             ],
             [
                 "name"=>"Activity Name",
                 "slogan"=>"Something of a catchy slogan about its travelling adventures",
                 "price"=>100000,
                 "description"=> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.",
-                "img"=>"img/activity-3.png"
+                "img"=>"img/activity-3.png",
+                'minimum_person' => 30,
             ],
             [
                 "name"=>"Activity Name",
                 "slogan"=>"Something of a catchy slogan about its travelling adventures",
                 "price"=>100000,
                 "description"=> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.",
-                "img"=>"img/activity.png"
+                "img"=>"img/activity.png",
+                'minimum_person' => 30,
             ],
             [
                 "name"=>"Activity Name",
                 "slogan"=>"Something of a catchy slogan about its travelling adventures",
                 "price"=>100000,
                 "description"=> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.",
-                "img"=>"img/activity.png"
+                "img"=>"img/activity.png",
+                'minimum_person' => 30,
             ],
             [
                 "name"=>"Activity Name",
                 "slogan"=>"Something of a catchy slogan about its travelling adventures",
                 "price"=>100000,
                 "description"=> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.",
-                "img"=>"img/activity.png"
+                "img"=>"img/activity.png",
+                'minimum_person' => 30,
             ],
             [
                 "name"=>"Activity Name",
                 "slogan"=>"Something of a catchy slogan about its travelling adventures",
                 "price"=>100000,
                 "description"=> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.",
-                "img"=>"img/activity.png"
+                "img"=>"img/activity.png",
+                'minimum_person' => 30,
             ],
             [
                 "name"=>"Activity Name",
                 "slogan"=>"Something of a catchy slogan about its travelling adventures",
                 "price"=>100000,
                 "description"=> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.",
-                "img"=>"img/activity.png"
+                "img"=>"img/activity.png",
+                'minimum_person' => 30,
             ],
             [
                 "name"=>"Activity Name",
                 "slogan"=>"Something of a catchy slogan about its travelling adventures",
                 "price"=>100000,
                 "description"=> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.",
-                "img"=>"img/activity.png"
+                "img"=>"img/activity.png",
+                'minimum_person' => 30,
             ],
             [
                 "name"=>"Activity Name",
                 "slogan"=>"Something of a catchy slogan about its travelling adventures",
                 "price"=>100000,
                 "description"=> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.",
-                "img"=>"img/activity.png"
+                "img"=>"img/activity.png",
+                'minimum_person' => 30,
             ],
             [
                 "name"=>"Activity Name",
                 "slogan"=>"Something of a catchy slogan about its travelling adventures",
                 "price"=>100000,
                 "description"=> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.",
-                "img"=>"img/activity.png"
+                "img"=>"img/activity.png",
+                'minimum_person' => 30,
             ],
             [
                 "name"=>"Activity Name",
                 "slogan"=>"Something of a catchy slogan about its travelling adventures",
                 "price"=>100000,
                 "description"=> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.",
-                "img"=>"img/activity.png"
+                "img"=>"img/activity.png",
+                'minimum_person' => 30,
             ],
             [
                 "name"=>"Activity Name",
                 "slogan"=>"Something of a catchy slogan about its travelling adventures",
                 "price"=>100000,
                 "description"=> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.",
-                "img"=>"img/activity.png"
+                "img"=>"img/activity.png",
+                'minimum_person' => 30,
             ],
             [
                 "name"=>"Activity Name",
                 "slogan"=>"Something of a catchy slogan about its travelling adventures",
                 "price"=>100000,
                 "description"=> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.",
-                "img"=>"img/activity.png"
+                "img"=>"img/activity.png",
+                'minimum_person' => 30,
             ],
             [
                 "name"=>"Activity Name",
                 "slogan"=>"Something of a catchy slogan about its travelling adventures",
                 "price"=>100000,
                 "description"=> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.",
-                "img"=>"img/activity.png"
+                "img"=>"img/activity.png",
+                'minimum_person' => 30,
             ],
         ];
 
