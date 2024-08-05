@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 use App\Models\Paket;
 
@@ -22,6 +23,13 @@ class Travel extends Controller
         return view('detail_activity', [
             'title' => $paket->name." Detail",
             'id' => $paket->id
+        ]);
+    }
+    public function articleShow($id) {
+        $article = Article::find($id);
+        return view('detail_article', [
+            'title' => $article->title,
+            'id' => $article->id
         ]);
     }
 }

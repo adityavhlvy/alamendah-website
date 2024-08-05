@@ -1,5 +1,5 @@
 const carouselClass = ["-translate-0x", "-translate-1x", "-translate-2x"];
-const carousels = document.querySelectorAll("#carousel img");
+const carousels = document.querySelectorAll("#carousel a");
 let i = 0;
 let point = true;
 

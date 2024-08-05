@@ -17,7 +17,7 @@ function showInterface(date, month, seconds, minutes, hour) {
     document.getElementById("date").innerHTML = date;
     document.getElementById("month").innerHTML = month.substring(0, 3);
     document.getElementById("hour").innerHTML =
-        hour % 12 < 10 ? `0${hour % 12}` : hour % 12;
+        hour % 12 < 10 ? (hour == 12 ? hour : `0${hour % 12}`) : hour % 12;
     document.getElementById("minutes").innerHTML =
         minutes < 10 ? `0${minutes}` : minutes;
     document.getElementById("seconds").innerHTML =

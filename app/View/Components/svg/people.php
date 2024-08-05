@@ -6,12 +6,12 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class calendar extends Component
+class people extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(public $width, public $height, public $color = "white")
+    public function __construct(public $bgcolor = "white", public $color = "black", public $width = 30, public $height = 30)
     {
         //
     }
@@ -21,6 +21,6 @@ class calendar extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.svg.calendar');
+        return view('components.svg.people');
     }
 }

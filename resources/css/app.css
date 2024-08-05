@@ -22,6 +22,10 @@
     @apply rounded-xl bg-dark-grey border-4 border-solid border-transparent bg-clip-padding;
 }
 
+.hidden-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
     @apply bg-blue-sky rounded-xl  w-[100px];
 }

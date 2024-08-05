@@ -14,10 +14,13 @@ class Author extends Model
         'article_id',
         'user_id',  
     ];
+    protected $with = [
+        'user'
+    ];
 
-    public function user() :HasOne
+    public function user() :BelongsTo
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function article() :BelongsTo

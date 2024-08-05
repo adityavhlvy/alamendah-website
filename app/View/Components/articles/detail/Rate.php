@@ -1,17 +1,17 @@
 <?php
 
-namespace App\View\Components\svg;
+namespace App\View\Components\articles\detail;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class calendar extends Component
+class Rate extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(public $width, public $height, public $color = "white")
+    public function __construct()
     {
         //
     }
@@ -21,6 +21,6 @@ class calendar extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.svg.calendar');
+        return view('components.articles.detail.rate');
     }
 }

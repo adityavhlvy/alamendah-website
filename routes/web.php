@@ -21,6 +21,7 @@ Route::controller(App\Http\Controllers\Travel::class)->name('main.')->group(func
     Route::get('/home', 'index')->name('index');
     Route::get('/activity', 'activity')->name('activity');
     Route::get('/activity/{id}', 'activityShow')->name('activity.show');
+    Route::get('/article/{id}', 'articleShow')->name('article.show');
 });
 Route::get('/', function () {
     return redirect()->route('main.index');
