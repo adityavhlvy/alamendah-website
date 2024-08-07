@@ -14,11 +14,11 @@ class Recent extends Model
         'user_id',
         'article_id',
     ];
-    protected $with = ['article'];
+    protected $with = ['article', 'user'];
 
-    public function article() :HasOne
+    public function article() :BelongsTo
     {
-        return $this->hasOne(Article::class);
+        return $this->belongsTo(Article::class);
     }
 
     public function user() :BelongsTo

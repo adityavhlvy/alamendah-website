@@ -54,7 +54,7 @@ class UserController extends Controller
             'email' => 'Data email harus sesuai dengan format email',
             'min' => 'Data :attribute harus memiliki panjang minimal :min karakter.',
             'max' => 'Data :attribute harus memiliki panjang maximal :max karakter.',
-            'unique' => ':attribute belum pernah terdaftar sebelumnya',
+            'unique' => ':attribute sudah terdaftar sebelumnya',
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
         
@@ -109,6 +109,9 @@ class UserController extends Controller
         $credentials = $request->only('email', 'password');
         if(Auth::attempt($credentials)){
             if(!$user->verifiedaccount->isVerified) {
+                Auth::logout();
+                request()->session()->invalidate();
+                request()->session()->regenerateToken();
                 return redirect()->route('auth.signin')
                     ->with('warning', 'Email anda belum diverifikasi. Lakukan verifikasi terlebih dahulu!')
                     ->withInput();
