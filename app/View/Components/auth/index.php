@@ -11,7 +11,7 @@ class index extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public string $title, public string $question, public string $action, public string $url)
+    public function __construct(public string $title, public string $question, public string $action, public string $url, public string $post)
     {
         //
     }

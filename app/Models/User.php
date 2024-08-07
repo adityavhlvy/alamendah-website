@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -25,13 +25,18 @@ class User extends Authenticatable
         'password',
         'telephone',
         'address',
+        'token',
+        'isVerified',
     ];
-
-    protected $with = ['payments', 'recents'];
 
     public function payments() :HasMany
     {
         return $this->hasMany(Payment::class);
+    }
+
+    public function verifiedaccount() :HasOne
+    {
+        return $this->hasOne(Verifiedaccount::class);
     }
 
     public function recents() :HasMany
@@ -39,7 +44,7 @@ class User extends Authenticatable
         return $this->hasMany(Recent::class);
     }
 
-    public function user() :HasOne
+    public function author() :HasOne
     {
         return $this->hasOne(Author::class);
     }

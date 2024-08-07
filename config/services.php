@@ -21,6 +21,10 @@ return [
         'scheme' => 'https',
     ],
 
+    'mailersend' => [
+        'api_key' => env('MAILERSEND_API_KEY'),
+    ],
+
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],

@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::controller(App\Http\Controllers\UserController::class)->name('auth.')->group(function () {
     Route::get('/signin', 'signin')->name('signin');
     Route::get('/signup', 'signup')->name('signup');
+    Route::post('/register', 'register')->name('register');
+    Route::get('/signup/verification/{email}/{token}', 'verify')->name('account-verification');
+    Route::post('/login', 'login')->name('login');
+    Route::get('/logout', 'logout')->name('logout');
 });
+
 Route::controller(App\Http\Controllers\Travel::class)->name('main.')->group(function () {
     Route::get('/home', 'index')->name('index');
     Route::get('/activity', 'activity')->name('activity');

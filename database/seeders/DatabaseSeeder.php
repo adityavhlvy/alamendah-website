@@ -11,6 +11,7 @@ use App\Models\Author;
 use App\Models\PaketActivity;
 use App\Models\Subarticle;
 use App\Models\User;
+use App\Models\Verifiedaccount;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -558,6 +559,7 @@ class DatabaseSeeder extends Seeder
         }
 
         User::factory(3)->create();
+        Verifiedaccount::factory(3)->create();
 
         $data = [
             [

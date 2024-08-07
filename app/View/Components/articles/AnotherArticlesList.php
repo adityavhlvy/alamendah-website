@@ -13,7 +13,6 @@ class AnotherArticlesList extends Component
      */
     public function __construct(public $articles, public $componentTitle)
     {
-        //
     }
 
     /**
