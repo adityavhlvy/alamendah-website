@@ -9,6 +9,7 @@ use App\Models\Activity;
 use App\Models\Article;
 use App\Models\Author;
 use App\Models\PaketActivity;
+use App\Models\Qna;
 use App\Models\Subarticle;
 use App\Models\User;
 use App\Models\Verifiedaccount;
@@ -590,6 +591,30 @@ class DatabaseSeeder extends Seeder
                 'title' => "A Weekend Gateway to Alamendah: Embrace Nature and Culture",
                 'img' => 'articles-7.png',
             ],
+            [
+                'title' => "Discover the Hidden Beauty of Alamendah Village: A Nature Lover’s Paradise",
+                'img' => 'articles-8.png',
+            ],
+            [
+                'title' => "Unveiling Alamendah: West Java’s Best-Kept Secret",
+                'img' => 'articles-9.png',
+            ],
+            [
+                'title' => "Reconnect with Nature: Eco-Tourism in Alamendah",
+                'img' => 'articles-10.png',
+            ],
+            [
+                'title' => "Experience the Thrill of Hiking in Alamendah’s Scenic Trails",
+                'img' => 'articles-11.png',
+            ],
+            [
+                'title' => "A Guide to Alamendah’s Outdoor Adventures",
+                'img' => 'articles-12.png',
+            ],
+            [
+                'title' => "Explore Alamendah: Where Adventure Meets Serenity",
+                'img' => 'articles-13.png',
+            ],
         ];
 
         foreach($data as $item) {
@@ -679,6 +704,78 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'article_id' => 7,
+                'user_id' => 3,
+            ],
+            [
+                'article_id' => 8,
+                'user_id' => 1,
+            ],
+            [
+                'article_id' => 8,
+                'user_id' => 2,
+            ],
+            [
+                'article_id' => 8,
+                'user_id' => 3,
+            ],
+            [
+                'article_id' => 9,
+                'user_id' => 1,
+            ],
+            [
+                'article_id' => 9,
+                'user_id' => 2,
+            ],
+            [
+                'article_id' => 9,
+                'user_id' => 3,
+            ],
+            [
+                'article_id' => 10,
+                'user_id' => 1,
+            ],
+            [
+                'article_id' => 10,
+                'user_id' => 2,
+            ],
+            [
+                'article_id' => 10,
+                'user_id' => 3,
+            ],
+            [
+                'article_id' => 11,
+                'user_id' => 1,
+            ],
+            [
+                'article_id' => 11,
+                'user_id' => 2,
+            ],
+            [
+                'article_id' => 11,
+                'user_id' => 3,
+            ],
+            [
+                'article_id' => 12,
+                'user_id' => 1,
+            ],
+            [
+                'article_id' => 12,
+                'user_id' => 2,
+            ],
+            [
+                'article_id' => 12,
+                'user_id' => 3,
+            ],
+            [
+                'article_id' => 13,
+                'user_id' => 1,
+            ],
+            [
+                'article_id' => 13,
+                'user_id' => 2,
+            ],
+            [
+                'article_id' => 13,
                 'user_id' => 3,
             ],
         ];
@@ -828,10 +925,157 @@ class DatabaseSeeder extends Seeder
                 'title' => "Adventure Awaits: Your Journey Starts Here",
                 'description' => "Whether you're an avid hiker, a culture enthusiast, or simply seeking a peaceful retreat, Alamendah Village offers a unique experience that caters to all interests. Immerse yourself in nature's embrace, connect with the vibrant local culture, and create memories that will last a lifetime. Book your trip today and embark on an unforgettable adventure in Alamendah."
             ],
+            [
+                'article_id' => 8,
+                'title' => "Welcome to Alamendah: Where Nature Awaits You",
+                'description' => "Nestled in the heart of the lush Bandung Regency, Alamendah Village offers a serene escape for those seeking to reconnect with nature. As you take your first steps into this enchanting destination, be prepared to be captivated by its stunning landscapes, vibrant culture, and welcoming community. Whether you're looking to unwind in the tranquility of nature or embark on an adventurous exploration, Alamendah has something special for everyone."
+            ],
+            [
+                'article_id' => 8,
+                'title' => "Explore the Natural Wonders",
+                'description' => "Alamendah Village is a haven for nature enthusiasts. From the majestic views of Mount Malabar to the tranquil beauty of the Cimahi River, there’s no shortage of breathtaking sights to explore. Hiking trails wind through verdant forests, leading you to hidden waterfalls and panoramic viewpoints that will leave you in awe. Don’t miss the chance to wander through the vibrant tea plantations, where you can learn about the art of tea-making and savor freshly brewed tea right from the source."
+            ],
+            [
+                'article_id' => 8,
+                'title' => "Experience Authentic Village Life",
+                'description' => "At Alamendah, you have the opportunity to experience traditional Sundanese culture firsthand. Participate in local workshops where skilled artisans demonstrate age-old crafts such as bamboo weaving and batik making. Enjoy traditional dance performances and savor authentic Sundanese cuisine, made from fresh local ingredients. By engaging with the local community, you’ll gain a deeper appreciation for the customs and traditions that define this charming village."
+            ],
+            [
+                'article_id' => 8,
+                'title' => "Adventure Awaits: Your Journey Starts Here",
+                'description' => "Whether you're an avid hiker, a culture enthusiast, or simply seeking a peaceful retreat, Alamendah Village offers a unique experience that caters to all interests. Immerse yourself in nature's embrace, connect with the vibrant local culture, and create memories that will last a lifetime. Book your trip today and embark on an unforgettable adventure in Alamendah."
+            ],
+            [
+                'article_id' => 9,
+                'title' => "Welcome to Alamendah: Where Nature Awaits You",
+                'description' => "Nestled in the heart of the lush Bandung Regency, Alamendah Village offers a serene escape for those seeking to reconnect with nature. As you take your first steps into this enchanting destination, be prepared to be captivated by its stunning landscapes, vibrant culture, and welcoming community. Whether you're looking to unwind in the tranquility of nature or embark on an adventurous exploration, Alamendah has something special for everyone."
+            ],
+            [
+                'article_id' => 9,
+                'title' => "Explore the Natural Wonders",
+                'description' => "Alamendah Village is a haven for nature enthusiasts. From the majestic views of Mount Malabar to the tranquil beauty of the Cimahi River, there’s no shortage of breathtaking sights to explore. Hiking trails wind through verdant forests, leading you to hidden waterfalls and panoramic viewpoints that will leave you in awe. Don’t miss the chance to wander through the vibrant tea plantations, where you can learn about the art of tea-making and savor freshly brewed tea right from the source."
+            ],
+            [
+                'article_id' => 9,
+                'title' => "Experience Authentic Village Life",
+                'description' => "At Alamendah, you have the opportunity to experience traditional Sundanese culture firsthand. Participate in local workshops where skilled artisans demonstrate age-old crafts such as bamboo weaving and batik making. Enjoy traditional dance performances and savor authentic Sundanese cuisine, made from fresh local ingredients. By engaging with the local community, you’ll gain a deeper appreciation for the customs and traditions that define this charming village."
+            ],
+            [
+                'article_id' => 9,
+                'title' => "Adventure Awaits: Your Journey Starts Here",
+                'description' => "Whether you're an avid hiker, a culture enthusiast, or simply seeking a peaceful retreat, Alamendah Village offers a unique experience that caters to all interests. Immerse yourself in nature's embrace, connect with the vibrant local culture, and create memories that will last a lifetime. Book your trip today and embark on an unforgettable adventure in Alamendah."
+            ],
+            [
+                'article_id' => 10,
+                'title' => "Welcome to Alamendah: Where Nature Awaits You",
+                'description' => "Nestled in the heart of the lush Bandung Regency, Alamendah Village offers a serene escape for those seeking to reconnect with nature. As you take your first steps into this enchanting destination, be prepared to be captivated by its stunning landscapes, vibrant culture, and welcoming community. Whether you're looking to unwind in the tranquility of nature or embark on an adventurous exploration, Alamendah has something special for everyone."
+            ],
+            [
+                'article_id' => 10,
+                'title' => "Explore the Natural Wonders",
+                'description' => "Alamendah Village is a haven for nature enthusiasts. From the majestic views of Mount Malabar to the tranquil beauty of the Cimahi River, there’s no shortage of breathtaking sights to explore. Hiking trails wind through verdant forests, leading you to hidden waterfalls and panoramic viewpoints that will leave you in awe. Don’t miss the chance to wander through the vibrant tea plantations, where you can learn about the art of tea-making and savor freshly brewed tea right from the source."
+            ],
+            [
+                'article_id' => 10,
+                'title' => "Experience Authentic Village Life",
+                'description' => "At Alamendah, you have the opportunity to experience traditional Sundanese culture firsthand. Participate in local workshops where skilled artisans demonstrate age-old crafts such as bamboo weaving and batik making. Enjoy traditional dance performances and savor authentic Sundanese cuisine, made from fresh local ingredients. By engaging with the local community, you’ll gain a deeper appreciation for the customs and traditions that define this charming village."
+            ],
+            [
+                'article_id' => 10,
+                'title' => "Adventure Awaits: Your Journey Starts Here",
+                'description' => "Whether you're an avid hiker, a culture enthusiast, or simply seeking a peaceful retreat, Alamendah Village offers a unique experience that caters to all interests. Immerse yourself in nature's embrace, connect with the vibrant local culture, and create memories that will last a lifetime. Book your trip today and embark on an unforgettable adventure in Alamendah."
+            ],
+            [
+                'article_id' => 11,
+                'title' => "Welcome to Alamendah: Where Nature Awaits You",
+                'description' => "Nestled in the heart of the lush Bandung Regency, Alamendah Village offers a serene escape for those seeking to reconnect with nature. As you take your first steps into this enchanting destination, be prepared to be captivated by its stunning landscapes, vibrant culture, and welcoming community. Whether you're looking to unwind in the tranquility of nature or embark on an adventurous exploration, Alamendah has something special for everyone."
+            ],
+            [
+                'article_id' => 11,
+                'title' => "Explore the Natural Wonders",
+                'description' => "Alamendah Village is a haven for nature enthusiasts. From the majestic views of Mount Malabar to the tranquil beauty of the Cimahi River, there’s no shortage of breathtaking sights to explore. Hiking trails wind through verdant forests, leading you to hidden waterfalls and panoramic viewpoints that will leave you in awe. Don’t miss the chance to wander through the vibrant tea plantations, where you can learn about the art of tea-making and savor freshly brewed tea right from the source."
+            ],
+            [
+                'article_id' => 11,
+                'title' => "Experience Authentic Village Life",
+                'description' => "At Alamendah, you have the opportunity to experience traditional Sundanese culture firsthand. Participate in local workshops where skilled artisans demonstrate age-old crafts such as bamboo weaving and batik making. Enjoy traditional dance performances and savor authentic Sundanese cuisine, made from fresh local ingredients. By engaging with the local community, you’ll gain a deeper appreciation for the customs and traditions that define this charming village."
+            ],
+            [
+                'article_id' => 11,
+                'title' => "Adventure Awaits: Your Journey Starts Here",
+                'description' => "Whether you're an avid hiker, a culture enthusiast, or simply seeking a peaceful retreat, Alamendah Village offers a unique experience that caters to all interests. Immerse yourself in nature's embrace, connect with the vibrant local culture, and create memories that will last a lifetime. Book your trip today and embark on an unforgettable adventure in Alamendah."
+            ],
+            [
+                'article_id' => 12,
+                'title' => "Welcome to Alamendah: Where Nature Awaits You",
+                'description' => "Nestled in the heart of the lush Bandung Regency, Alamendah Village offers a serene escape for those seeking to reconnect with nature. As you take your first steps into this enchanting destination, be prepared to be captivated by its stunning landscapes, vibrant culture, and welcoming community. Whether you're looking to unwind in the tranquility of nature or embark on an adventurous exploration, Alamendah has something special for everyone."
+            ],
+            [
+                'article_id' => 12,
+                'title' => "Explore the Natural Wonders",
+                'description' => "Alamendah Village is a haven for nature enthusiasts. From the majestic views of Mount Malabar to the tranquil beauty of the Cimahi River, there’s no shortage of breathtaking sights to explore. Hiking trails wind through verdant forests, leading you to hidden waterfalls and panoramic viewpoints that will leave you in awe. Don’t miss the chance to wander through the vibrant tea plantations, where you can learn about the art of tea-making and savor freshly brewed tea right from the source."
+            ],
+            [
+                'article_id' => 12,
+                'title' => "Experience Authentic Village Life",
+                'description' => "At Alamendah, you have the opportunity to experience traditional Sundanese culture firsthand. Participate in local workshops where skilled artisans demonstrate age-old crafts such as bamboo weaving and batik making. Enjoy traditional dance performances and savor authentic Sundanese cuisine, made from fresh local ingredients. By engaging with the local community, you’ll gain a deeper appreciation for the customs and traditions that define this charming village."
+            ],
+            [
+                'article_id' => 12,
+                'title' => "Adventure Awaits: Your Journey Starts Here",
+                'description' => "Whether you're an avid hiker, a culture enthusiast, or simply seeking a peaceful retreat, Alamendah Village offers a unique experience that caters to all interests. Immerse yourself in nature's embrace, connect with the vibrant local culture, and create memories that will last a lifetime. Book your trip today and embark on an unforgettable adventure in Alamendah."
+            ],
+            [
+                'article_id' => 13,
+                'title' => "Welcome to Alamendah: Where Nature Awaits You",
+                'description' => "Nestled in the heart of the lush Bandung Regency, Alamendah Village offers a serene escape for those seeking to reconnect with nature. As you take your first steps into this enchanting destination, be prepared to be captivated by its stunning landscapes, vibrant culture, and welcoming community. Whether you're looking to unwind in the tranquility of nature or embark on an adventurous exploration, Alamendah has something special for everyone."
+            ],
+            [
+                'article_id' => 13,
+                'title' => "Explore the Natural Wonders",
+                'description' => "Alamendah Village is a haven for nature enthusiasts. From the majestic views of Mount Malabar to the tranquil beauty of the Cimahi River, there’s no shortage of breathtaking sights to explore. Hiking trails wind through verdant forests, leading you to hidden waterfalls and panoramic viewpoints that will leave you in awe. Don’t miss the chance to wander through the vibrant tea plantations, where you can learn about the art of tea-making and savor freshly brewed tea right from the source."
+            ],
+            [
+                'article_id' => 13,
+                'title' => "Experience Authentic Village Life",
+                'description' => "At Alamendah, you have the opportunity to experience traditional Sundanese culture firsthand. Participate in local workshops where skilled artisans demonstrate age-old crafts such as bamboo weaving and batik making. Enjoy traditional dance performances and savor authentic Sundanese cuisine, made from fresh local ingredients. By engaging with the local community, you’ll gain a deeper appreciation for the customs and traditions that define this charming village."
+            ],
+            [
+                'article_id' => 13,
+                'title' => "Adventure Awaits: Your Journey Starts Here",
+                'description' => "Whether you're an avid hiker, a culture enthusiast, or simply seeking a peaceful retreat, Alamendah Village offers a unique experience that caters to all interests. Immerse yourself in nature's embrace, connect with the vibrant local culture, and create memories that will last a lifetime. Book your trip today and embark on an unforgettable adventure in Alamendah."
+            ],
         ];
 
         foreach($data as $item) {
             Subarticle::create($item);
+        }
+
+        $data = [
+            [
+                'question' => 'What is Alamendah Village?',
+                'answer' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam veritatis fuga totam dolor atque dolores dolorum, laudantium pariatur soluta repellat fugit, eligendi ea sunt. Fuga aspernatur doloribus ab sunt officiis facere debitis! Ea, id voluptatum ipsa provident quasi animi odio a accusantium vero eum aut facere ipsum, nihil quisquam modi!',
+            ],
+            [
+                'question' => 'Where is Alamendah Village located?',
+                'answer' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam veritatis fuga totam dolor atque dolores dolorum, laudantium pariatur soluta repellat fugit, eligendi ea sunt. Fuga aspernatur doloribus ab sunt officiis facere debitis! Ea, id voluptatum ipsa provident quasi animi odio a accusantium vero eum aut facere ipsum, nihil quisquam modi!',
+            ],
+            [
+                'question' => 'How can I get to Alamendah Village?',
+                'answer' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam veritatis fuga totam dolor atque dolores dolorum, laudantium pariatur soluta repellat fugit, eligendi ea sunt. Fuga aspernatur doloribus ab sunt officiis facere debitis! Ea, id voluptatum ipsa provident quasi animi odio a accusantium vero eum aut facere ipsum, nihil quisquam modi!',
+            ],
+            [
+                'question' => 'What types of accomodations are available in Alamendah?',
+                'answer' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam veritatis fuga totam dolor atque dolores dolorum, laudantium pariatur soluta repellat fugit, eligendi ea sunt. Fuga aspernatur doloribus ab sunt officiis facere debitis! Ea, id voluptatum ipsa provident quasi animi odio a accusantium vero eum aut facere ipsum, nihil quisquam modi!',
+            ],
+            [
+                'question' => 'Are there any restaurants or dining options in Alamendah?',
+                'answer' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam veritatis fuga totam dolor atque dolores dolorum, laudantium pariatur soluta repellat fugit, eligendi ea sunt. Fuga aspernatur doloribus ab sunt officiis facere debitis! Ea, id voluptatum ipsa provident quasi animi odio a accusantium vero eum aut facere ipsum, nihil quisquam modi!',
+            ],
+        ];
+        
+        foreach($data as $d) {
+            Qna::create($d);
         }
 
     }

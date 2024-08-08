@@ -18,6 +18,7 @@
   <script src="{{ asset('js/select-ops.js') }}"></script>
   <script src="{{ asset('js/dropdown.js') }}"></script>
   <script src="{{ asset('js/carousel.js') }}"></script>
+  <script src="{{ asset('js/qna.js') }}"></script>
   @if(Request::routeIs('main.index'))
     <script src="{{ asset('js/time.js') }}"></script>
   @endif

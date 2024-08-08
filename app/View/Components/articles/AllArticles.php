@@ -2,18 +2,21 @@
 
 namespace App\View\Components\articles;
 
-use App\Models\Article;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use App\Models\Article;
 
-class DetailArticles extends Component
+class AllArticles extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(public $article, public $allArticle)
+    public $articles;
+    public function __construct()
     {
+        $articles = Article::all()->toArray();
+        $this->articles = array_slice($articles, 7);
     }
 
     /**
@@ -21,6 +24,6 @@ class DetailArticles extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.articles.detail-articles');
+        return view('components.articles.all-articles');
     }
 }

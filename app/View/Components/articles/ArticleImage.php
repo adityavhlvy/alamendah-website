@@ -2,18 +2,18 @@
 
 namespace App\View\Components\articles;
 
-use App\Models\Article;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class DetailArticles extends Component
+class ArticleImage extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(public $article, public $allArticle)
+    public function __construct(public $img)
     {
+        //
     }
 
     /**
@@ -21,6 +21,6 @@ class DetailArticles extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.articles.detail-articles');
+        return view('components.articles.article-image');
     }
 }

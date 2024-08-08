@@ -1,0 +1,1 @@
+<img src="{{ asset('storage/articles/'.$img) }}" alt="" class="w-[90rem] h-[40rem] rounded-3xl">

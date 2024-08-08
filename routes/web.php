@@ -22,11 +22,12 @@ Route::controller(App\Http\Controllers\UserController::class)->name('auth.')->gr
     Route::get('/signup/verification/{email}/{token}', 'verify')->name('account-verification');
     Route::post('/login', 'login')->name('login');
     Route::get('/logout', 'logout')->name('logout');
-});
+})->middleware(['guest']);
 
 Route::controller(App\Http\Controllers\Travel::class)->name('main.')->group(function () {
     Route::get('/home', 'index')->name('index');
     Route::get('/activity', 'activity')->name('activity');
+    Route::get('/article', 'article')->name('article');
     Route::get('/activity/{id}', 'activityShow')->name('activity.show');
     Route::get('/article/{id}', 'articleShow')->name('article.show');
 });

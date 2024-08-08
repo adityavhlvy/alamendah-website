@@ -21,6 +21,11 @@ class Travel extends Controller
             'title' => 'Activity'
         ]);
     }
+    public function article() {
+        return view('article', [
+            'title' => 'Article',
+        ]);
+    }
     public function activityShow($id) {
         $paket = Paket::find($id);
         return view('detail_activity', [
