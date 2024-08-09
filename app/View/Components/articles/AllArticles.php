@@ -15,7 +15,7 @@ class AllArticles extends Component
     public $articles;
     public function __construct()
     {
-        $articles = Article::all()->toArray();
+        $articles = Article::with(['subarticles', 'authors'])->get()->toArray();
         $this->articles = array_slice($articles, 7);
     }
 

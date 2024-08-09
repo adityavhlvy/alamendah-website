@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\EmailVerification;
+use App\Models\Admin;
 use App\Models\User;
 use App\Models\Verifiedaccount;
 use Illuminate\Contracts\Mail\Mailable;
@@ -67,6 +68,10 @@ class UserController extends Controller
             'user_id' => $user->id,
             'token' => $token,
             'isVerified' => false,
+        ]);
+        Admin::create([
+            'user_id' => $user->id,
+            'isAdmin' => false,
         ]);
         Mail::to($request->email)->send(new EmailVerification($request->email, $token));
         return redirect()->route('auth.signin')->with('success', 'Email anda sudah terdaftar. Silahkan verifikasi di email anda');

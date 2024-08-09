@@ -4,8 +4,10 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Achievement;
 use App\Models\Paket;
 use App\Models\Activity;
+use App\Models\Admin;
 use App\Models\Article;
 use App\Models\Author;
 use App\Models\PaketActivity;
@@ -559,8 +561,62 @@ class DatabaseSeeder extends Seeder
             PaketActivity::create($item);
         }
 
-        User::factory(3)->create();
+        User::factory(9)->create();
         Verifiedaccount::factory(3)->create();
+
+        $data = [
+            [
+                'user_id' => 1,
+                'isAdmin' => false,
+            ],
+            [
+                'user_id' => 2,
+                'isAdmin' => false,
+            ],
+            [
+                'user_id' => 3,
+                'isAdmin' => false,
+            ],
+            [
+                'user_id' => 4,
+                'img' => 'user/user1.png',
+                'isAdmin' => true,
+            ],
+            [
+                'user_id' => 5,
+                'img' => 'user/user2.png',
+                'isAdmin' => true,
+            ],
+            [ 
+                'user_id' => 6,
+                'img' => 'user/user3.png',
+                'isAdmin' => true,
+            ],
+            [
+                'user_id' => 7,
+                'img' => 'user/user4.png',
+                'isAdmin' => true,
+            ],
+            [
+                'user_id' => 8,
+                'img' => 'user/user5.png',
+                'isAdmin' => true,
+            ],
+            [
+                'user_id' => 9,
+                'img' => 'user/user6.png',
+                'isAdmin' => true,
+            ],
+        ];
+        foreach($data as $d) {
+            Admin::factory()->create($d);
+        }
+
+        $data = [4, 5, 6, 7, 8 ,9];
+        
+        foreach($data as $d) {
+            Achievement::factory()->create(['admin_id' => $d]);
+        }
 
         $data = [
             [

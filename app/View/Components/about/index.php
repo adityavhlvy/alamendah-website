@@ -2,6 +2,8 @@
 
 namespace App\View\Components\about;
 
+use App\Models\Admin;
+use App\Models\User;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -14,44 +16,7 @@ class index extends Component
     public $admins;
     public function __construct()
     {
-        $this->admins = [
-            [
-                'name' => 'Ahmad Santoso',
-                'position' => 'Eco-Tourism Coordinator',
-                'achievement' => ['Cerficate Digital Marketing BNSP'],
-                'img' => 'user/user1.png',
-            ],
-            [
-                'name' => 'Ahmad Santoso',
-                'position' => 'Eco-Tourism Coordinator',
-                'achievement' => ['Cerficate Digital Marketing BNSP'],
-                'img' => 'user/user2.png',
-            ],
-            [
-                'name' => 'Ahmad Santoso',
-                'position' => 'Eco-Tourism Coordinator',
-                'achievement' => ['Cerficate Digital Marketing BNSP'],
-                'img' => 'user/user3.png',
-            ],
-            [
-                'name' => 'Ahmad Santoso',
-                'position' => 'Eco-Tourism Coordinator',
-                'achievement' => ['Cerficate Digital Marketing BNSP'],
-                'img' => 'user/user4.png',
-            ],
-            [
-                'name' => 'Ahmad Santoso',
-                'position' => 'Eco-Tourism Coordinator',
-                'achievement' => ['Cerficate Digital Marketing BNSP'],
-                'img' => 'user/user5.png',
-            ],
-            [
-                'name' => 'Ahmad Santoso',
-                'position' => 'Eco-Tourism Coordinator',
-                'achievement' => ['Cerficate Digital Marketing BNSP'],
-                'img' => 'user/user6.png',
-            ],
-        ];
+        $this->admins = Admin::with(['achievements'])->where('isAdmin', true)->get()->toArray();
     }
 
     /**

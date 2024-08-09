@@ -49,6 +49,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(Author::class);
     }
 
+    public function admin() :HasOne
+    {
+        return $this->hasOne(Admin::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

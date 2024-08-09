@@ -14,7 +14,6 @@ class Article extends Model
         'title',
         'img',
     ];
-    protected $with = ['subarticles', 'authors'];
 
     public function subarticles() :HasMany
     {

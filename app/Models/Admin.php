@@ -5,24 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Recent extends Model
+class Admin extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'user_id',
-        'article_id',
-    ];
-    protected $with = ['article'];
-
-    public function article() :BelongsTo
-    {
-        return $this->belongsTo(Article::class);
-    }
+    protected $fillable = ['user_id', 'isAdmin'];
+    protected $with = ['user'];
 
     public function user() :BelongsTo
     {
         return $this->belongsTo(User::class);
     }
+    public function achievements() :HasMany
+    {
+        return $this->hasMany(Achievement::class);
+    } 
 }

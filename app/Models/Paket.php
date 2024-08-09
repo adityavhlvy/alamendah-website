@@ -18,9 +18,6 @@ class Paket extends Model
         'slogan',
         'minimum_person'
     ];
-    protected $with = [
-        'paketactivities'
-    ];
 
     public function payment() :HasOne
     {
