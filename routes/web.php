@@ -28,6 +28,7 @@ Route::controller(App\Http\Controllers\Travel::class)->name('main.')->group(func
     Route::get('/home', 'index')->name('index');
     Route::get('/activity', 'activity')->name('activity');
     Route::get('/article', 'article')->name('article');
+    Route::get('/about-us', 'about')->name('about-us');
     Route::get('/activity/{id}', 'activityShow')->name('activity.show');
     Route::get('/article/{id}', 'articleShow')->name('article.show');
 });

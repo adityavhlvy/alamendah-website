@@ -752,10 +752,6 @@ video {
   height: 100%;
 }
 
-.h-auto {
-  height: auto;
-}
-
 .max-h-\[100px\] {
   max-height: 100px;
 }
@@ -840,26 +836,6 @@ video {
   width: 100%;
 }
 
-.w-40 {
-  width: 10rem;
-}
-
-.w-96 {
-  width: 24rem;
-}
-
-.w-\[\] {
-  width: ;
-}
-
-.w-\[30rem\] {
-  width: 30rem;
-}
-
-.w-\[32rem\] {
-  width: 32rem;
-}
-
 .min-w-\[15rem\] {
   min-width: 15rem;
 }
@@ -882,10 +858,6 @@ video {
 
 .max-w-\[20rem\] {
   max-width: 20rem;
-}
-
-.max-w-96 {
-  max-width: 24rem;
 }
 
 .flex-shrink-0 {
@@ -926,10 +898,6 @@ video {
 
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid-cols-3 {
@@ -996,10 +964,6 @@ video {
   justify-content: space-between;
 }
 
-.justify-around {
-  justify-content: space-around;
-}
-
 .justify-stretch {
   justify-content: stretch;
 }
@@ -1010,10 +974,6 @@ video {
 
 .justify-items-center {
   justify-items: center;
-}
-
-.justify-items-stretch {
-  justify-items: stretch;
 }
 
 .gap-1 {
@@ -1084,10 +1044,6 @@ video {
   align-self: flex-end;
 }
 
-.self-baseline {
-  align-self: baseline;
-}
-
 .justify-self-end {
   justify-self: end;
 }
@@ -1124,10 +1080,6 @@ video {
   border-radius: 0.75rem;
 }
 
-.rounded-2xl {
-  border-radius: 1rem;
-}
-
 .rounded-l-3xl {
   border-top-left-radius: 1.5rem;
   border-bottom-left-radius: 1.5rem;
@@ -1141,6 +1093,16 @@ video {
 .rounded-r-3xl {
   border-top-right-radius: 1.5rem;
   border-bottom-right-radius: 1.5rem;
+}
+
+.rounded-t-2xl {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.rounded-t-3xl {
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
 }
 
 .border {
@@ -1290,6 +1252,22 @@ video {
   padding: 2rem;
 }
 
+.p-32 {
+  padding: 8rem;
+}
+
+.p-40 {
+  padding: 10rem;
+}
+
+.p-20 {
+  padding: 5rem;
+}
+
+.p-10 {
+  padding: 2.5rem;
+}
+
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -1428,6 +1406,10 @@ video {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .tracking-wider {
@@ -1700,6 +1682,10 @@ video {
 
   .sm\:p-12 {
     padding: 3rem;
+  }
+
+  .sm\:p-40 {
+    padding: 10rem;
   }
 
   .sm\:px-40 {
