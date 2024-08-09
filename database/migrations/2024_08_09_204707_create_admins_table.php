@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class);
             $table->boolean('isAdmin');
-            $table->string('position');
+            $table->string('position')->nullable();
             $table->string('img')->nullable();
             $table->timestamps();
         });
