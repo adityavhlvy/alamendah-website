@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\EmailVerification;
+use App\Mail\ForgotPassword;
 use App\Models\Admin;
 use App\Models\User;
 use App\Models\Verifiedaccount;
@@ -90,6 +91,80 @@ class UserController extends Controller
             $user->verifiedaccount->save();
             return redirect()->route('auth.signin')->with('success', 'Email anda telah diverifikasi. Silahkan login kedalam aplikasi');
         }
+    }
+
+    public function forgotPassword() {
+        return view('forgot', [
+            'title' => 'Forgot Password',
+            'question' => 'Dont have account?',
+            'action' => 'Sign Up Here',
+            'url' => route('auth.signup'),
+            'post' => route('auth.send-mail')
+        ]);
+    }
+
+    public function sendMailChangePassword(Request $request) {
+        $rules = [
+            'email' => ['required','email'],
+        ];
+        $messages = [
+            'required' => 'Data :attribute harus diisi.',
+            'email' => 'Data email harus sesuai dengan format email',
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if ($validator->fails()){
+            return redirect()->route('auth.forgot')->withErrors($validator)->withInput();
+        }
+        $user = User::where('email', $request->email)->first();
+        if (!$user) {
+            return redirect()->route('auth.forgot')
+                ->withErrors(['email' => 'Email belum terdaftar, lakukan registrasi terlebih dahulu.'])
+                ->withInput();
+        }
+        $token = hash('sha256', $user->password.$user->telephone);
+        $verifiedaccount = $user->verifiedaccount;
+        $verifiedaccount->token = $token;
+        $verifiedaccount->save();
+        Mail::to($request->email)->send(new ForgotPassword($user->email, $token));
+        return redirect()->route('auth.signin')->with('success', 'Verifikasi berhasil dilakukan. Silahkan ubah password anda dengan melakukan klik pada link yang kami kirimkan pada email anda');
+    }
+
+    public function changePassword($email, $token) {
+        $user = User::where('email', $email)->first();
+        if(!$user){
+            return redirect()->route('auth.signin')
+                    ->with('warning', 'Link anda tidak valid!');
+        }elseif($user->verifiedaccount->token != $token){
+            return redirect()->route('auth.signin')
+                    ->with('warning', 'Link anda tidak valid!');
+        }else {
+            return view('change', [
+                'title' => 'Change Password',
+                'question' => '',
+                'action' => '',
+                'url' => '',
+                'post' => route('auth.changepassword', ['email' =>$user->email])
+            ]);
+        }
+    }
+
+    public function change(Request $request, $email) {
+        $rules = [
+            'password' => ['required'],
+            'confirmpassword' => ['required', 'same:password']
+        ];
+        $messages = [
+            'required' => 'Data :attribute harus diisi.',
+            'same' =>  ':attribute harus sama dengan :other',
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if ($validator->fails()){
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        $user = User::where('email', $email)->first();
+        $user->password = $request->password;
+        $user->save();
+        return redirect()->route('auth.signin')->with('success', 'Password anda berhasil diubah, silahkan lakukan login!');
     }
 
     public function login(Request $request) {

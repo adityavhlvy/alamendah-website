@@ -14,7 +14,7 @@
         <input type="password" name="password" id="password" class="rounded-xl max-w-[20rem] min-w-[15rem] sm:min-w-[30rem] h-[3rem] p-5 text-black placeholder:text-black focus:outline-none" placeholder="Password" value="{{ old('password') }}">
         @error('password')<p class="text-red-500 font-semibold self-start text-xs px-5">{{ $message }}</p>@enderror
       </div>
-      <a href="" class="underline underline-offset-2 text-end self-end">Forget Password</a>
+      <a href="{{ route('auth.forgot') }}" class="underline underline-offset-2 text-end self-end">Forget Password</a>
     </div>
   </x-auth.index>
 </x-layouts.app>

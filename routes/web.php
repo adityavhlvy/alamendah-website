@@ -20,6 +20,10 @@ Route::controller(App\Http\Controllers\UserController::class)->name('auth.')->gr
     Route::get('/signup', 'signup')->name('signup');
     Route::post('/register', 'register')->name('register');
     Route::get('/signup/verification/{email}/{token}', 'verify')->name('account-verification');
+    Route::get('/forget', 'forgotPassword')->name('forgot');
+    Route::post('/send-mail', 'sendMailChangePassword')->name('send-mail');
+    Route::get('/changepassword/{email}/{token}', 'changePassword')->name('change');
+    Route::post('/changepassword/run/{email}', 'change')->name('changepassword');
     Route::post('/login', 'login')->name('login');
     Route::get('/logout', 'logout')->name('logout');
 })->middleware(['guest']);
