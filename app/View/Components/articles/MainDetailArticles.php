@@ -17,7 +17,7 @@ class MainDetailArticles extends Component
     public $allArticle;
     public function __construct(public $id)
     {
-        $this->article = Article::find($id)->toArray();
+        $this->article = Article::find($id)->with(['authors', 'subarticles'])->first()->toArray();
         $this->allArticle = Article::whereNotIn('id',[$id])->get()->toArray();
     }
 

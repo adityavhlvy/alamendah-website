@@ -15,14 +15,6 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        
-    }
-
     public function signin() {
         return view('signin', [
             'title' => 'Sign In',
@@ -32,7 +24,7 @@ class UserController extends Controller
             'post' => route('auth.login'),
         ]);
     }
-
+    
     public function signup() {
         return view('signup', [
             'title' => 'Sign Up',
@@ -69,6 +61,7 @@ class UserController extends Controller
             'user_id' => $user->id,
             'token' => $token,
             'isVerified' => false,
+            'isChanged' => true,
         ]);
         Admin::create([
             'user_id' => $user->id,
@@ -120,10 +113,15 @@ class UserController extends Controller
             return redirect()->route('auth.forgot')
                 ->withErrors(['email' => 'Email belum terdaftar, lakukan registrasi terlebih dahulu.'])
                 ->withInput();
+        } elseif(!$user->verifiedaccount->isVerified) {
+            return redirect()->route('auth.forgot')
+                ->withErrors(['email' => 'Email belum diverifikasi, lakukan verifikasi terlebih dahulu pada email yang telah dikirimkan.'])
+                ->withInput();
         }
-        $token = hash('sha256', $user->password.$user->telephone);
+        $token = hash('sha256', $user->password.$user->verifiedaccount->token);
         $verifiedaccount = $user->verifiedaccount;
         $verifiedaccount->token = $token;
+        $verifiedaccount->isChanged = false;
         $verifiedaccount->save();
         Mail::to($request->email)->send(new ForgotPassword($user->email, $token));
         return redirect()->route('auth.signin')->with('success', 'Verifikasi berhasil dilakukan. Silahkan ubah password anda dengan melakukan klik pada link yang kami kirimkan pada email anda');
@@ -137,6 +135,9 @@ class UserController extends Controller
         }elseif($user->verifiedaccount->token != $token){
             return redirect()->route('auth.signin')
                     ->with('warning', 'Link anda tidak valid!');
+        }elseif($user->verifiedaccount->isChanged) {
+            return redirect()->route('auth.signin')
+                    ->with('warning', 'Link anda telah kadaluarsa! Coba reset kembali');
         }else {
             return view('change', [
                 'title' => 'Change Password',
@@ -164,6 +165,10 @@ class UserController extends Controller
         $user = User::where('email', $email)->first();
         $user->password = $request->password;
         $user->save();
+
+        $verifiedaccount = $user->verifiedaccount;
+        $verifiedaccount->isChanged = true;
+        $verifiedaccount->save();
         return redirect()->route('auth.signin')->with('success', 'Password anda berhasil diubah, silahkan lakukan login!');
     }
 
@@ -211,53 +216,5 @@ class UserController extends Controller
         request()->session()->invalidate();
         request()->session()->regenerateToken();
         return redirect()->route('auth.signin')->with('success', 'Anda telah berhasil keluar dari akun ini');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(User $user)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(User $user)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, User $user)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(User $user)
-    {
-        //
     }
 }

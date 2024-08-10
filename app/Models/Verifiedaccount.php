@@ -13,6 +13,7 @@ class Verifiedaccount extends Model
         'user_id',
         'token',
         'isVerified',
+        'isChanged',
     ];
     protected $with = [
         'user'

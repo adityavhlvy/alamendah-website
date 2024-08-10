@@ -20,6 +20,7 @@ class VerifiedaccountFactory extends Factory
             'user_id' => fake()->unique()->numberBetween(1, 3),
             'token' => fake()->text(),
             'isVerified' => true,
+            'isChanged' => true,
         ];
     }
 }

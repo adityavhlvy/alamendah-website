@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignIdFor(User::class);
             $table->string('token');
             $table->boolean('isVerified');
+            $table->boolean('isChanged');
             $table->timestamps();
         });
     }
