@@ -16,17 +16,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::controller(App\Http\Controllers\UserController::class)->name('auth.')->group(function () {
-    Route::get('/signin', 'signin')->name('signin');
-    Route::get('/signup', 'signup')->name('signup');
-    Route::post('/register', 'register')->name('register');
-    Route::get('/signup/verification/{email}/{token}', 'verify')->name('account-verification');
-    Route::get('/forget', 'forgotPassword')->name('forgot');
-    Route::post('/send-mail', 'sendMailChangePassword')->name('send-mail');
-    Route::get('/changepassword/{email}/{token}', 'changePassword')->name('change');
-    Route::post('/changepassword/run/{email}', 'change')->name('changepassword');
-    Route::post('/login', 'login')->name('login');
-    Route::get('/logout', 'logout')->name('logout');
-})->middleware(['guest']);
+    Route::middleware('guest')->group(function () {
+        Route::get('/signin', 'signin')->name('signin');
+        Route::get('/signup', 'signup')->name('signup');
+        Route::get('/signup/verification/{email}/{token}', 'verify')->name('account-verification');
+        Route::get('/forget', 'forgotPassword')->name('forgot');
+        Route::get('/changepassword/{email}/{token}', 'changePassword')->name('change');
+        Route::middleware('post.method')->group(function () {
+            Route::post('/register', 'register')->name('register');
+            Route::post('/send-mail', 'sendMailChangePassword')->name('send-mail');
+            Route::post('/changepassword/run/{email}', 'change')->name('changepassword');
+            Route::post('/login', 'login')->name('login');
+        });
+    });
+    Route::get('/logout', 'logout')->name('logout')->middleware('auth');
+});
 
 Route::controller(App\Http\Controllers\Travel::class)->name('main.')->group(function () {
     Route::get('/home', 'index')->name('index');

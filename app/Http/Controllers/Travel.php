@@ -26,11 +26,13 @@ class Travel extends Controller
             'title' => 'Article',
         ]);
     }
+    
     public function about() {
         return view('about', [
             'title' => 'About Us',
         ]);
     }
+
     public function activityShow($id) {
         $paket = Paket::find($id);
         return view('detail_activity', [
@@ -38,6 +40,7 @@ class Travel extends Controller
             'id' => $paket->id
         ]);
     }
+
     public function articleShow($id) {
         $article = Article::find($id);
         if(Auth::user() && $article){
@@ -48,6 +51,7 @@ class Travel extends Controller
         } elseif(!$article) {
             return redirect()->route('main.index');
         }
+        
         return view('detail_article', [
             'title' => $article->title,
             'id' => $article->id
