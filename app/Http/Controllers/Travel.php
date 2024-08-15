@@ -57,4 +57,10 @@ class Travel extends Controller
             'id' => $article->id
         ]);
     }
+
+    public function booking() {
+        return view('booking', [
+            'title' => 'Booking',
+        ]);
+    }
 }

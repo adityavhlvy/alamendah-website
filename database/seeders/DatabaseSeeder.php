@@ -11,6 +11,7 @@ use App\Models\Admin;
 use App\Models\Article;
 use App\Models\Author;
 use App\Models\PaketActivity;
+use App\Models\Promocode;
 use App\Models\Qna;
 use App\Models\Subarticle;
 use App\Models\User;
@@ -1133,6 +1134,8 @@ class DatabaseSeeder extends Seeder
         foreach($data as $d) {
             Qna::create($d);
         }
+
+        Promocode::factory(20)->create();
 
     }
 

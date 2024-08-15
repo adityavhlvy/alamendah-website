@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(App\Models\User::class);
             $table->foreignIdFor(App\Models\Paket::class);
+            $table->foreignIdFor(App\Models\Promocode::class)->nullable();
+            $table->date('reservation_date');
+            $table->string('type');
             $table->integer("amount");
             $table->string("image_payment");
             $table->timestamps();

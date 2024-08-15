@@ -14,10 +14,12 @@ class Payment extends Model
     protected $fillable = [
         'user_id',
         'paket_id',
+        'promocode_id',
+        'reservation_date',
+        'type',
         'amount',
         'image_payment',
     ];
-    protected $with = ['paket'];
 
     public function paket() :HasOne
     {
@@ -27,5 +29,10 @@ class Payment extends Model
     public function user() :BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function promocode() :BelongsTo
+    {
+        return $this->belongsTo(Promocode::class);
     }
 }
