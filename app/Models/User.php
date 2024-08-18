@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -52,6 +53,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function admin() :HasOne
     {
         return $this->hasOne(Admin::class);
+    }
+
+    public function viewer() :BelongsTo
+    {
+        return $this->belongsTo(Viewers::class);
     }
 
     /**

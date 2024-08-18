@@ -15,12 +15,22 @@
   <x-layouts.nav />
   {{ $slot }}
   <x-layouts.footer />
+  @if(Request::routeIs('main.index'))
+    <script src="{{ asset('js/time.js') }}"></script>
+    <script>const requestRoute = "homepage"</script>
+  @endif
+  @if(Request::routeIs('main.activity'))
+    <script>const requestRoute = "activity"</script>
+  @endif
+  @if(Request::routeIs(['main.index', 'main.activity']))
+    <script src="{{ asset('js/listactivities.js') }}"></script>
+  @endif
   <script src="{{ asset('js/select-ops.js') }}"></script>
   <script src="{{ asset('js/dropdown.js') }}"></script>
   <script src="{{ asset('js/carousel.js') }}"></script>
   <script src="{{ asset('js/qna.js') }}"></script>
-  @if(Request::routeIs('main.index'))
-    <script src="{{ asset('js/time.js') }}"></script>
-  @endif
+  <script src="{{ asset('js/booking.js') }}"></script>
+  <script src="{{ asset('js/jquery.js') }}"></script>
+  <script src="{{ asset('js/give_rate.js') }}"></script>
 </body>
 </html>

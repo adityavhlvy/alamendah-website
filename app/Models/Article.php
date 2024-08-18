@@ -13,6 +13,8 @@ class Article extends Model
     protected $fillable = [
         'title',
         'img',
+        'likes',
+        'dislikes',
     ];
 
     public function subarticles() :HasMany
@@ -28,5 +30,10 @@ class Article extends Model
     public function recent() :HasOne
     {
         return $this->hasOne(recent::class);
+    }
+
+    public function viewer() :HasMany
+    {
+        return $this->hasMany(Viewers::class);
     }
 }

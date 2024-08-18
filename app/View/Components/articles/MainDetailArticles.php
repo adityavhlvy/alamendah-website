@@ -14,11 +14,26 @@ class MainDetailArticles extends Component
      * Create a new component instance.
      */
     public $article;
-    public $allArticle;
+    public $recents;
+    public $populars;
     public function __construct(public $id)
     {
-        $this->article = Article::find($id)->with(['authors', 'subarticles'])->first()->toArray();
-        $this->allArticle = Article::whereNotIn('id',[$id])->get()->toArray();
+        $this->article = Article::where('id',$id)->with(['authors', 'subarticles'])->first()->toArray();
+        $allArticle = Article::whereNotIn('id',[$id])->with(['viewer'])->get()->toArray();
+        usort($allArticle, function ($a, $b) {
+            $countA = is_null($a['viewer']) ? 0 : count($a['viewer']);
+            $countB = is_null($b['viewer']) ? 0 : count($b['viewer']);
+            return $countB <=> $countA;
+        });
+        $this->populars = array_slice($allArticle, 0, 3);
+        $popularIds = array_column($this->populars, 'id');
+        usort($allArticle, function ($a, $b) {
+            return $b['id'] <=> $a['id'];
+        });
+        $recents = array_filter($allArticle, function($article) use ($popularIds) {
+            return !in_array($article['id'], $popularIds);
+        });
+        $this->recents = array_slice($recents, 0, 3);
     }
 
     /**
