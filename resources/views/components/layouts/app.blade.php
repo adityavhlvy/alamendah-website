@@ -32,5 +32,6 @@
   <script src="{{ asset('js/booking.js') }}"></script>
   <script src="{{ asset('js/jquery.js') }}"></script>
   <script src="{{ asset('js/give_rate.js') }}"></script>
+  <script src="{{ asset('js/translate.js') }}"></script>
 </body>
 </html>

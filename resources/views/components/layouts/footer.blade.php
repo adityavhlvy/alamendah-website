@@ -6,7 +6,7 @@
         <x-footer.description />
         <div class="flex flex-col  items-center sm:items-start sm:flex-row gap-10">
             <div class="flex flex-col items-center sm:items-start gap-6 lg:gap-1.5">
-                <p class="text-4xl font-semibold">Find Us On</p>
+                <p class="text-4xl font-semibold translate">Find Us On</p>
                 <x-nav2.socialmedia />
             </div>
             <x-footer.contact />

@@ -1,5 +1,5 @@
 <div class="grid grid-cols-3 gap-5 items-center">
-    <h1 class="col-start-1 col-end-4 text-5xl font-bold text-center sm:text-start">{{ $article['title'] }}</h1>
+    <h1 class="col-start-1 col-end-4 text-5xl font-bold text-center sm:text-start translate">{{ $article['title'] }}</h1>
     <div class="col-start-1 col-end-3 text-xl flex flex-col items-center sm:text-start text-center sm:flex-row gap-3">
         <x-articles.detail.author-logo :authors="$article['authors']" />
         <x-articles.detail.author :authors="$article['authors']" />

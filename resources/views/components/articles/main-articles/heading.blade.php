@@ -2,7 +2,7 @@
     <div class="bg-black bg-opacity-20 w-full h-full flex flex-row items-end justify-items-start p-4 rounded-xl">
         <div class="flex flex-row items-center gap-4">
             <div class="w-1 h-24 bg-white"></div>
-            <h1 class="text-2xl font-semibold">{{ $article['title'] }}</h1>
+            <h1 class="text-2xl font-semibold translate">{{ $article['title'] }}</h1>
         </div>
     </div>
 </a>

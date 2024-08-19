@@ -3,14 +3,14 @@
         @if($recents) 
             <x-articles.another-articles-list :articles="$recents" :componentTitle="'Recent Articles'" /> 
         @else 
-            <h1 class="[text-shadow:0px_4px_4px_rgba(0,0,0,0.25)] font-semibold text-2xl">Recent Articles</h1> 
-            <h1 class="[text-shadow:0px_4px_4px_rgba(0,0,0,0.25)] font-semibold text-lg text-center">Anda belum membaca berita apapun</h1> 
+            <h1 class="[text-shadow:0px_4px_4px_rgba(0,0,0,0.25)] font-semibold text-2xl translate">Recent Articles</h1> 
+            <h1 class="[text-shadow:0px_4px_4px_rgba(0,0,0,0.25)] font-semibold text-lg text-center translate">No news has been made yet</h1> 
         @endif 
         @if($populars) 
             <x-articles.another-articles-list :articles="$populars" :componentTitle="'Popular Articles'" />
         @else
-            <h1 class="[text-shadow:0px_4px_4px_rgba(0,0,0,0.25)] font-semibold text-2xl">Popular Articles</h1> 
-            <h1 class="[text-shadow:0px_4px_4px_rgba(0,0,0,0.25)] font-semibold text-lg text-center">Belum ada berita yang dibuat</h1>
+            <h1 class="[text-shadow:0px_4px_4px_rgba(0,0,0,0.25)] font-semibold text-2xl translate">Popular Articles</h1> 
+            <h1 class="[text-shadow:0px_4px_4px_rgba(0,0,0,0.25)] font-semibold text-lg text-center translate">No news has been made yet</h1>
         @endif
     </div>
 </div>

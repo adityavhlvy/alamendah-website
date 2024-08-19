@@ -4,5 +4,5 @@
         @php $date = new DateTime($article['created_at']); @endphp
         <p>{{ $date->format('H:i, d/m/Y') }}</p>
     </div>
-    <a href="{{ route('main.article.show', ['id' => $article['id']]) }}" class="font-bold text-blue-sea underline underline-offset-4">See more</a>
+    <a href="{{ route('main.article.show', ['id' => $article['id']]) }}" class="font-bold text-blue-sea underline underline-offset-4 translate">See more</a>
 </div>
