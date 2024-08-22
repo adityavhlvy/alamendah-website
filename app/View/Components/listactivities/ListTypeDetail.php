@@ -13,7 +13,11 @@ class ListTypeDetail extends Component
      */
     public function __construct(public $activity)
     {
-        //
+        $activities = [];
+        foreach($this->activity['paketactivities'] as $act) {
+            array_push($activities, $act['activity']);
+        }
+        $this->activity = $activities;
     }
 
     /**

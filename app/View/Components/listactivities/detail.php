@@ -15,7 +15,7 @@ class detail extends Component
     public $activity;
     public function __construct(public $id)
     {
-        $this->activity = Paket::with(['paketactivities'])->find($id)->toArray();
+        $this->activity = Paket::with(['paketactivities', 'paketoptions'])->find($id)->toArray();
     }
 
     /**

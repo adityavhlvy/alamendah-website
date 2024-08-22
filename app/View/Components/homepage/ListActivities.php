@@ -15,7 +15,7 @@ class ListActivities extends Component
     public $listactivities;
     public function __construct()
     {
-        $this->listactivities = Paket::all()->toArray();
+        $this->listactivities = Paket::with(['paketoptions', 'paketactivities'])->get()->toArray();
     }
 
     /**

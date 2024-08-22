@@ -4,7 +4,7 @@ let i = 0;
 let point = true;
 
 document.querySelector("#carousel #right").addEventListener("click", () => {
-    if (i < 2) {
+    if (i < max) {
         i++;
         carousels.forEach((e) => {
             e.classList.remove(carouselClass[i - 1]);

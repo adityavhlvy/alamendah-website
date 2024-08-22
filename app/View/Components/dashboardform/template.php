@@ -1,18 +1,19 @@
 <?php
 
-namespace App\View\Components\listactivities;
+namespace App\View\Components\dashboardform;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class DetailDescription extends Component
+class template extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(public $activity)
+    public function __construct(public $routes)
     {
+        //
     }
 
     /**
@@ -20,6 +21,6 @@ class DetailDescription extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.listactivities.detail-description');
+        return view('components.dashboardform.template');
     }
 }

@@ -13,10 +13,8 @@ class Paket extends Model
     protected $fillable = [
         'name',
         'description',
-        'price',
         'img',
         'slogan',
-        'minimum_person'
     ];
 
     public function payment() :HasOne
@@ -27,5 +25,10 @@ class Paket extends Model
     public function paketactivities() :HasMany
     {
         return $this->hasMany(PaketActivity::class);
+    }
+
+    public function paketoptions() :HasMany
+    {
+        return $this->hasMany(Packetoptions::class);
     }
 }

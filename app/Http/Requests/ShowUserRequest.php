@@ -35,7 +35,6 @@ class ShowUserRequest extends FormRequest
         return [
             'required' => 'Data :attribute harus diisi.',
             'email' => 'Data email harus sesuai dengan format email',
-            
         ];
     }
 

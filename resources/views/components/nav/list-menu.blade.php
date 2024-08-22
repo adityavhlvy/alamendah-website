@@ -3,4 +3,9 @@
     <li><a href="{{ route('main.activity') }}">Activities</a></li>
     <li><a href="{{ route('main.article') }}">Article</a></li>
     <li><a href="{{ route('main.about-us') }}">About Us</a></li>
+    @auth
+        @if(Auth::user()->admin->isAdmin)
+            <li><a href="{{ route('dashboard.index') }}">Dashboard</a></li>
+        @endif
+    @endauth
 </ul>

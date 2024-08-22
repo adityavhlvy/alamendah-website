@@ -1,18 +1,21 @@
 <?php
 
-namespace App\View\Components\listactivities;
+namespace App\View\Components\pages\admin;
 
+use App\Models\Admin;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class DetailDescription extends Component
+class blog extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(public $activity)
+    public $admins;
+    public function __construct()
     {
+        $this->admins = Admin::where('isAdmin', true)->get()->toArray();
     }
 
     /**
@@ -20,6 +23,6 @@ class DetailDescription extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.listactivities.detail-description');
+        return view('components.pages.admin.blog');
     }
 }

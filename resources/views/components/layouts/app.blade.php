@@ -9,6 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('/css/output.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('/css/trix.css') }}">
+  <script type="text/javascript" src="{{ asset('/js/trix.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('/js/non_active_trix_file_feature.js') }}"></script>
 </head>
 <body>
   <x-layouts.nav2 />
@@ -33,5 +36,12 @@
   <script src="{{ asset('js/jquery.js') }}"></script>
   <script src="{{ asset('js/give_rate.js') }}"></script>
   <script src="{{ asset('js/translate.js') }}"></script>
+  <script src="{{ asset('js/packageshow.js') }}"></script>
+  @if(Request::routeIs('dashboard.blog'))
+    <script src="{{ asset('js/duplicate_form_author.js') }}"></script>
+  @endif
+  @if(Request::routeIs('dashboard.package'))
+    <script src="{{ asset('js/duplicate_form_typeactivity.js') }}"></script>
+  @endif
 </body>
 </html>

@@ -2,4 +2,5 @@
     @foreach(array_slice($listactivities, 3) as $activity)
         <x-listactivities.activity :$activity />
     @endforeach
+    <script>const max = {{ $listactivities > 3 ? 3 : count($listactivities) }}</script>
 </div>

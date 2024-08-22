@@ -38,3 +38,25 @@
 .-translate-2x {
     @apply -translate-x-[200%] duration-300;
 }
+trix-toolbar [data-trix-button-group="file-tools"] {
+    display: none !important;
+}
+trix-toolbar [data-trix-button-group="block-tools"] {
+    display: none !important;
+}
+
+trix-toolbar .trix-button-row .trix-button-group {
+    @apply border-none outline-none gap-2 items-center flex;
+}
+trix-toolbar {
+    @apply gap-3 flex flex-col;
+}
+trix-toolbar .trix-button-row .trix-button-group .trix-button {
+    @apply border-none outline-none text-white;
+}
+trix-toolbar .trix-button-row {
+    @apply bg-dark-grey rounded-xl w-full px-2 pb-2 pt-4;
+}
+trix-toolbar .trix-dialogs {
+    @apply border-none outline-none;
+}

@@ -13,8 +13,6 @@ class Article extends Model
     protected $fillable = [
         'title',
         'img',
-        'likes',
-        'dislikes',
     ];
 
     public function subarticles() :HasMany
