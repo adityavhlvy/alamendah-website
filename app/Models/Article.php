@@ -24,14 +24,4 @@ class Article extends Model
     {
         return $this->hasMany(Author::class);
     }
-
-    public function recent() :HasOne
-    {
-        return $this->hasOne(recent::class);
-    }
-
-    public function viewer() :HasMany
-    {
-        return $this->hasMany(Viewers::class);
-    }
 }

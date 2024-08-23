@@ -13,8 +13,9 @@
         @if($listactivities)
             <x-listactivities.header-all-activities :listactivities="array_slice($listactivities, 0, 3)"/>
             <x-listactivities.allactivities :$listactivities />
+            <script>const max = {{ count($listactivities) > 3 ? 3 : count($listactivities) }} </script>
         @else
-        <h1 class="font-bold text-center text-2xl mb-14">Belum ada paket yang dibuat, Harap ditunggu</h1>
+            <h1 class="font-bold text-center text-2xl mb-14">Belum ada paket yang dibuat, Harap ditunggu</h1>
         @endif
     @endif
 </div>

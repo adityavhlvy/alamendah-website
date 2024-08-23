@@ -30,19 +30,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'isVerified',
     ];
 
-    public function payments() :HasMany
-    {
-        return $this->hasMany(Payment::class);
-    }
-
     public function verifiedaccount() :HasOne
     {
         return $this->hasOne(Verifiedaccount::class);
-    }
-
-    public function recents() :HasMany
-    {
-        return $this->hasMany(Recent::class);
     }
 
     public function author() :HasOne
@@ -53,11 +43,6 @@ class User extends Authenticatable implements MustVerifyEmail
     public function admin() :HasOne
     {
         return $this->hasOne(Admin::class);
-    }
-
-    public function viewer() :BelongsTo
-    {
-        return $this->belongsTo(Viewers::class);
     }
 
     /**

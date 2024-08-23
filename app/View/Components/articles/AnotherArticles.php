@@ -12,7 +12,7 @@ class AnotherArticles extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public $populars, public $recents)
+    public function __construct(public $articles)
     {
         
     }

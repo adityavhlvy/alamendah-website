@@ -4,7 +4,7 @@ let i = 0;
 let point = true;
 
 document.querySelector("#carousel #right").addEventListener("click", () => {
-    if (i < max) {
+    if (i < max - 1) {
         i++;
         carousels.forEach((e) => {
             e.classList.remove(carouselClass[i - 1]);
@@ -24,7 +24,7 @@ document.querySelector("#carousel #left").addEventListener("click", () => {
 });
 
 setInterval(() => {
-    if (i == 2) {
+    if (i == max - 1) {
         point = false;
     } else if (i == 0) {
         point = true;

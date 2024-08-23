@@ -15,21 +15,8 @@ class AllArticles extends Component
     public $articles;
     public function __construct()
     {
-        $articles = Article::with(['subarticles', 'viewer'])->get()->toArray();
-        usort($articles, function ($a, $b) {
-            return $b['id'] <=> $a['id'];
-        });
-        $recents = array_column(array_slice($articles, 0, 3), 'id');
-        usort($articles, function ($a, $b) {
-            $countA = is_null($a['viewer']) ? 0 : count($a['viewer']);
-            $countB = is_null($b['viewer']) ? 0 : count($b['viewer']);
-            return $countB <=> $countA;
-        });
-        $popular = array_column(array_slice($articles, 0, 7), 'id');
-        $id = array_unique(array_merge($recents, $popular));
-        $this->articles = array_filter($articles, function($article) use ($id) {
-            return !in_array($article['id'], $id);
-        });
+        $this->articles = Article::with(['subarticles'])->get()->toArray();
+        $this->articles = array_slice($this->articles, 10);
     }
 
     /**

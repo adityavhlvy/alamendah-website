@@ -55,8 +55,10 @@ class Dashboard extends Controller
     }
 
     public function postblog(BlogRequest $request) {
+        $articlelatest = Article::latest()->first();
+        $newId = $articlelatest->id + 1;
         $formatImage = $request->file('img')->getClientOriginalExtension();
-        $img = $request->file('img')->storeAs('public/articles', $request->title.".".$formatImage);
+        $img = $request->file('img')->storeAs('public/articles', $request->title." ".$newId.".".$formatImage);
         $img = str_replace('public/', "", $img);
         $article = Article::create([
             'title' => $request->title,

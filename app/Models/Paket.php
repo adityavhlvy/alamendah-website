@@ -17,11 +17,6 @@ class Paket extends Model
         'slogan',
     ];
 
-    public function payment() :HasOne
-    {
-        return $this->hasOne(Payment::class);
-    }
-
     public function paketactivities() :HasMany
     {
         return $this->hasMany(PaketActivity::class);

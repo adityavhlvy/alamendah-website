@@ -11,8 +11,4 @@ class Promocode extends Model
     use HasFactory;
     protected $fillable = ['code', 'promo_percent'];
 
-    public function payments() :HasMany
-    {
-        return $this->hasMany(Payment::class);
-    }
 }

@@ -12,7 +12,7 @@ class DetailArticles extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public $article, public $populars, public $recents)
+    public function __construct(public $article, public $articles)
     {
     }
 
