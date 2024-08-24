@@ -1,7 +1,78 @@
+const resetListForwardOption = (listForward) => {
+    document.body.addEventListener("click", (e) => {
+        if (
+            e.target.contains(listForward) &&
+            !listForward.classList.contains("opacity-0")
+        ) {
+            listForward.classList.add("opacity-0");
+        }
+    });
+};
+
+const checkSiblingsListForwardOption = (element) => {
+    Array.from(activities).forEach((sibling) => {
+        const siblingListForward = sibling.querySelector("#List");
+        if (
+            element != sibling &&
+            !siblingListForward.classList.contains("opacity-0")
+        ) {
+            siblingListForward.classList.add("opacity-0");
+        }
+    });
+};
+
+const whatsAppEventListener = (element) => {
+    const Whatsapp = element.querySelector("#Whatsapp");
+    Whatsapp.addEventListener("click", (event) => {
+        event.preventDefault();
+        const whatsappShareURL = `whatsapp://send?text=${encodeURIComponent(
+            Whatsapp.getAttribute("data-link")
+        )}`;
+        let a = document.createElement("a");
+        a.href = whatsappShareURL;
+        a.click();
+        ListForward.classList.toggle("opacity-0");
+    });
+};
+
+const linkEventListener = (element) => {
+    const Link = element.querySelector("#Link");
+    Link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const copy = document.createElement("input");
+        copy.value = Link.getAttribute("data-link");
+        document.body.appendChild(copy);
+        copy.select();
+        document.execCommand("copy");
+        document.body.removeChild(copy);
+        Swal.fire({
+            icon: "success",
+            title: "URL Berhasil disalin",
+            showConfirmButton: false,
+            timer: 1000,
+        });
+        ListForward.classList.toggle("opacity-0");
+    });
+};
+
+const forwardEvent = (element) => {
+    const ForwardButton = element.querySelector("#Forward");
+    const ListForward = element.querySelector("#List");
+    ForwardButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        checkSiblingsListForwardOption(element);
+        ListForward.classList.toggle("opacity-0");
+        whatsAppEventListener(element);
+        linkEventListener(element);
+    });
+    resetListForwardOption(ListForward);
+};
+
 const activities = document.getElementsByClassName("activities");
 if (requestRoute === "homepage") {
     Array.from(activities).forEach((element) => {
         const DescriptionButton = element.querySelector("#Description");
+        forwardEvent(element);
         DescriptionButton.addEventListener("click", (event) => {
             event.preventDefault();
             const p = element.querySelector("#Content p");
@@ -21,6 +92,7 @@ if (requestRoute === "homepage") {
 } else if (requestRoute === "activity") {
     Array.from(activities).forEach((element) => {
         const DescriptionButton = element.querySelector("#Description");
+        forwardEvent(element);
         DescriptionButton.addEventListener("click", (event) => {
             event.preventDefault();
             Array.from(activities).forEach((e) => {

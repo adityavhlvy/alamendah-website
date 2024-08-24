@@ -25,10 +25,11 @@
     <script>const requestRoute = "homepage"</script>
   @endif
   @if(Request::routeIs('main.activity'))
-    <script>const requestRoute = "activity"</script>
     <script src="{{ asset('js/carousel.js') }}"></script>
+    <script>const requestRoute = "activity"</script>
   @endif
   @if(Request::routeIs(['main.index', 'main.activity']))
+    <script src="{{ asset('js/sweetalert.js') }}"></script>
     <script src="{{ asset('js/listactivities.js') }}"></script>
   @endif
   @if(Request::routeIs('main.booking'))
