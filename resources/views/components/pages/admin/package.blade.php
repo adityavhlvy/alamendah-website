@@ -1,5 +1,5 @@
 @props(['datas'])
-<x-dashboardform.template :routes="isset($datas) ? route('dashboard.update-activity', ['id', $datas['id']]) : route('dashboard.add-package')">
+<x-dashboardform.template :routes="isset($datas) ? route('dashboard.update-activity', ['id' => $datas['id']]) : route('dashboard.add-package')">
   <div class="w-64 sm:w-96 md:w-64 lg:w-96">
     <input type="text" placeholder="Package Name" name="package_name" class="text-black placeholder:text-black rounded-xl border-none outline-none p-2 w-full" @isset($datas) value="{{ $datas['name'] }}" @endif>
     @error('package_name')<p class="text-red-500 font-semibold self-start text-xs px-2 pt-2">{{ $message }}</p>@enderror
@@ -24,7 +24,10 @@
     </div>  
   </div>
   <div class="">
-    <input type="file" name="img_package" id="imageInput" @isset($datas) value="{{ $datas['img'] }}" @endif>
+    @isset($datas)
+      <input type="hidden" name="img_package_old" value="{{ $datas['img'] }}">
+    @endif
+    <input type="file" name="img_package" id="imageInput" @isset($datas) src="{{ asset('storage/'.$datas['img']) }}" value="{{ $datas['img'] }}" @endif>
     @error('img_package')<p class="text-red-500 font-semibold self-start text-xs px-2 pt-2">{{ $message }}</p>@enderror
   </div>
   <div class="w-full">

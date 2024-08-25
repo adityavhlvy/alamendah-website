@@ -170,7 +170,60 @@ class Dashboard extends Controller
     }
 
     public function updatePackage(PackageRequest $request, $id) {
-        
+        // update data paket
+        $paket = Paket::where('id', $id)->first();
+        $img = '';
+        if(isset($request->img_package)){
+            $formatImage = $request->file('img_package')->getClientOriginalExtension();
+            $img = $request->file('img_package')->storeAs('public/', explode('.', $paket->img)[0].'.'.$formatImage);
+            $paket->img = str_replace('public/', "", $img);
+        }
+        $paket->name = $request->package_name;
+        $paket->description = $request->description_package;
+        $paket->slogan = $request->package_slogan;
+        $paket->save();
+
+        // update data opsi paket
+        $paketoptions = $paket->paketoptions;
+        foreach($paketoptions as $paketoption) {
+            $paketoption->delete();
+        }
+        foreach($request->package_price as $key => $package_price) {
+            Packetoptions::create([
+                'paket_id' => $paket->id,
+                'price' => $package_price,
+                'minimum_person' => $request->minimum_person[$key]
+            ]);
+        }
+
+        // update tipe aktifitas paket
+        $paketactivities = $paket->paketactivities;
+        foreach($paketactivities as $paketactivity) {
+            $activity = $paketactivity->activity;
+            $activity->delete();
+            $paketactivity->delete();
+        }
+        foreach($request->name_activity as $key => $name_activity) {
+            $img = "";
+            if(isset($request->img_activity[$key])) {
+                $formatImageActivity = $request->file('img_activity')[$key]->getClientOriginalExtension();
+                $img = $request->file('img_activity')[$key]->storeAs('public/', explode(".", $request->img_activity_old[$key])[0].".".$formatImageActivity);
+                $img = str_replace('public/', "", $img);
+            } else {
+                $img = $request->img_activity_old[$key];
+            }
+            $activity = Activity::create([
+                'name' => $name_activity,
+                'description' => $request->description_activity[$key],
+                'img' => $img,
+            ]);
+            PaketActivity::create([
+                'paket_id' => $paket->id,
+                'activity_id' => $activity->id,
+            ]);
+        }
+
+        return redirect()->route('dashboard.index')->with("success", 'Paket berhasil diubah');
     }
 
     public function updateBlog(BlogRequest $request, $id) {

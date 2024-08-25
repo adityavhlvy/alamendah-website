@@ -21,17 +21,22 @@ class PackageRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
+        $rules = [
             'package_name' => ['required'],
             'package_slogan' => ['required'],
-            'package_price' => ['required'],
-            'minimum_person' => ['required'],
-            'img_package' => ['required', 'mimes:jpg,bmp,png'],
+            'package_price.*' => ['required'],
+            'minimum_person.*' => ['required'],
             'description_package' => ['required'],
-            'name_activity' => ['required'],
-            'img_activity.*' => ['required', 'mimes:jpg,bmp,png'],
-            'description_activity' => ['required'],
+            'name_activity.*' => ['required'],
+            'description_activity.*' => ['required'],
         ];
+        if($this->hasFile('img_package') || !$this->filled('img_package_old')) {
+            $rules['img_package'] = ['required', 'mimes:jpg,bmp,png'];
+        }
+        if($this->hasFile('img_activity.*') || !$this->filled('img_activity_old.*')) {
+            $rules['img_activity.*'] = ['required', 'mimes:jpg,bmp,png'];
+        }
+        return $rules;
     }
 
     public function messages() :array 
@@ -39,6 +44,11 @@ class PackageRequest extends FormRequest
         return [
             'required' => ':attribute harus ditambahkan!',
             'mimes' => 'Tipe file yang diupload harus jpg, bmp, atau png',
+            'name_activity.*.required' => 'Nama Aktifitas harus ditambahkan!',
+            'description_activity.*.required' => 'Deskripsi Aktifitas harus ditambahkan!',
+            'img_activity.*.required' => 'Gambar Aktifitas harus ditambahkan!',
+            'package_price.*.required' => 'Semua harga paket harus diisi!',
+            'minimum_person.*.required' => 'Semua Syarat minimal pemesan harus ditambahkan!',
         ];
     }
 }
