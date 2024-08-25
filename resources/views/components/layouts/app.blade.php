@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('/css/output.css') }}">
-  @if(Request::routeIs('dashboard.blog'))
+  @if(Request::routeIs(['dashboard.blog', 'dashboard.form-update-article']))
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/trix.css') }}">
     <script type="text/javascript" src="{{ asset('/js/trix.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/non_active_trix_file_feature.js') }}"></script>
@@ -38,10 +38,13 @@
   @if(Request::routeIs('main.activity.show'))
     <script src="{{ asset('js/packageshow.js') }}"></script>
   @endif
-  @if(Request::routeIs('dashboard.blog'))
+  @if(Request::routeIs('dashboard.index'))
+    <script src="{{ asset('js/dashboard.js') }}"></script>
+  @endif
+  @if(Request::routeIs(['dashboard.blog', 'dashboard.form-update-article']))
     <script src="{{ asset('js/duplicate_form_author.js') }}"></script>
   @endif
-  @if(Request::routeIs('dashboard.package'))
+  @if(Request::routeIs(['dashboard.package', 'dashboard.form-update-activity']))
     <script src="{{ asset('js/duplicate_form_typeactivity.js') }}"></script>
   @endif
   <script src="{{ asset('js/select-ops.js') }}"></script>

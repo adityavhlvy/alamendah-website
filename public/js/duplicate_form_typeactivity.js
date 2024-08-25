@@ -15,8 +15,9 @@ const addImagePreviewListener = (activityElement) => {
 };
 
 const button = document.getElementById("Activity-add");
+const removeActivityButton = document.querySelectorAll("#Activity-remove");
 const duplicatedForm = document.getElementById("Activity");
-const activity = document.getElementsByClassName("activity")[0];
+const activity = document.getElementsByClassName("activity");
 
 button.addEventListener("click", () => {
     const newActivity = activity.cloneNode(true);
@@ -37,9 +38,18 @@ button.addEventListener("click", () => {
     addImagePreviewListener(newActivity);
 });
 
-addImagePreviewListener(activity);
+removeActivityButton.forEach((element) => {
+    element.addEventListener("click", () => {
+        element.parentElement.remove();
+    });
+});
+
+Array.from(activity).forEach((e) => {
+    addImagePreviewListener(e);
+});
 
 const optionButton = document.getElementById("Option-add");
+const optionRemoveButton = document.querySelectorAll("#Option-remove");
 const options = document.getElementsByClassName("options")[0];
 const option = document.getElementsByClassName("option")[0];
 
@@ -51,4 +61,10 @@ optionButton.addEventListener("click", () => {
         newOption.remove();
     });
     options.appendChild(newOption);
+});
+
+optionRemoveButton.forEach((e) => {
+    e.addEventListener("click", () => {
+        e.parentElement.remove();
+    });
 });

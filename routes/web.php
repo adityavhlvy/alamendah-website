@@ -35,9 +35,15 @@ Route::controller(App\Http\Controllers\UserController::class)->name('auth.')->gr
 Route::middleware(['auth', 'admin'])->controller(App\Http\Controllers\Dashboard::class)->name('dashboard.')->group(function () {
     Route::get('/dashboard', 'index')->name('index');
     Route::get('/dashboard/package', 'package')->name('package');
-    Route::post('/dashboard/package', 'addPackage')->name('add-package');
+    Route::post('/dashboard/package', 'postPackage')->name('add-package');
     Route::get('/dashboard/blog', 'blog')->name('blog');
     Route::post('/dashboard/blog', 'postblog')->name('blogpost');
+    Route::get('/dashboard/artikel/delete/{id}', 'deleteArtikel')->name("delete-article");
+    Route::get('/dashboard/paket/delete/{id}', 'deletePaket')->name('delete-activity');
+    Route::get('/dashboard/package/{id}', 'formUpdatePackage')->name('form-update-activity');
+    Route::post('/dashboard/package/update/{id}', 'updatePackage')->name('update-activity');
+    Route::get('/dashboard/blog/{id}', 'formUpdateBlog')->name('form-update-article');
+    Route::post('/dashboard/blog/update/{id}', 'updateBlog')->name('update-article');
 });
 
 Route::controller(App\Http\Controllers\Travel::class)->name('main.')->group(function () {
@@ -48,7 +54,6 @@ Route::controller(App\Http\Controllers\Travel::class)->name('main.')->group(func
     Route::get('/activity/{id}', 'activityShow')->name('activity.show');
     Route::get('/article/{id}', 'articleShow')->name('article.show');
     Route::get('/booking', 'booking')->middleware(['auth'])->name('booking');
-
 });
 Route::get('/', function () {
     return redirect()->route('main.index');

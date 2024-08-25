@@ -1,17 +1,17 @@
 <?php
 
-namespace App\View\Components\booking;
+namespace App\View\Components\svg;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class triptype extends Component
+class pencil extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(public $id = "Trip", public $option = ["One Day Trip", "Overnight Stay"])
+    public function __construct()
     {
         //
     }
@@ -21,6 +21,6 @@ class triptype extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.booking.triptype');
+        return view('components.svg.pencil');
     }
 }

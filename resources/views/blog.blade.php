@@ -1,3 +1,7 @@
 <x-layouts.app :$title>
-  <x-pages.admin.blog />
+  @isset($article)
+    <x-pages.admin.blog :$article />
+  @else
+    <x-pages.admin.blog />
+  @endif
 </x-layouts.app>

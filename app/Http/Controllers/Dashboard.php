@@ -77,7 +77,7 @@ class Dashboard extends Controller
         return redirect()->route('dashboard.index');
     }
 
-    public function addPackage(PackageRequest $request) {
+    public function postPackage(PackageRequest $request) {
         $packages = Paket::latest()->first();
         $newId = $packages->id + 1;
         $formatImage = $request->file('img_package')->getClientOriginalExtension();
@@ -115,5 +115,65 @@ class Dashboard extends Controller
         }
 
         return redirect()->route('dashboard.index');
+    }
+
+    public function deleteArtikel($id){
+        $artikel = Article::where('id', $id)->first();
+        $authors = $artikel->authors;
+        $subarticles = $artikel->subarticles;
+        $artikel->delete();
+        foreach($authors as $author) {
+            $author->delete();
+        }
+        foreach($subarticles as $subarticle) {
+            $subarticle->delete();
+        }
+        return redirect()->back()->with('success', 'Artikel berhasil dihapus');
+    }
+
+    public function deletePaket($id) {
+        $paket = Paket::where('id', $id)->first();
+        $paket->delete();
+        $paketoptions = $paket->paketoptions;
+        foreach($paketoptions as $paketoption) {
+            $paketoption->delete();
+        }
+        $paketactivities = $paket->paketactivities;
+        foreach($paketactivities as $paketactivity) {
+            $activity = $paketactivity->activity;
+            $activity->delete();
+            $paketactivity->delete();
+        }
+        return redirect()->back()->with('success', 'Paket berhasil dihapus');
+    }
+
+    public function formUpdatePackage($id) {
+        $package = Paket::with(['paketactivities', 'paketoptions'])->where('id', $id)->first()->toArray();
+        return view('package', [
+            'title' => 'Package Dashboard',
+            'package' => $package,
+        ]);
+    }
+
+    public function formUpdateBlog($id) {
+        $article = Article::with(['authors', 'subarticles'])->where('id', $id)->first();
+        $subarticle = '';
+        foreach($article->subarticles as $subarticles) {
+            $subarticle .= "<strong>$subarticles->title</strong><br>$subarticles->description<br>";
+        }
+        $article->subarticle = $subarticle;
+        $article = $article->toArray();
+        return view('blog', [
+            'title' => 'Dashboard',
+            'article' => $article,
+        ]);
+    }
+
+    public function updatePackage(PackageRequest $request, $id) {
+        
+    }
+
+    public function updateBlog(BlogRequest $request, $id) {
+
     }
 }

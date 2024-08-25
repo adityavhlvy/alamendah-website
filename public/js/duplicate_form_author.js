@@ -1,4 +1,5 @@
 const button = document.getElementById("author-add");
+const buttonRemove = document.querySelectorAll("#author-remove");
 const authors = document.getElementsByClassName("authors")[0];
 const authorField = document.getElementsByClassName("author")[0];
 button.addEventListener("click", () => {
@@ -9,4 +10,10 @@ button.addEventListener("click", () => {
         newAuthor.remove();
     });
     authors.appendChild(newAuthor);
+});
+
+buttonRemove.forEach((element) => {
+    element.addEventListener("click", () => {
+        element.parentElement.remove();
+    });
 });
