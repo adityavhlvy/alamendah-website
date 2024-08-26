@@ -21,12 +21,16 @@ class BlogRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
+        $rules = [
             'title' => ['required'],
             'author' => ['required'],
-            'img' => ['required', 'mimes:jpg,bmp,png'],
             'content' => ['required'],
         ];
+
+        if($this->hasFile('img') || !$this->filled('img_old')) {
+            $rules['img'] = ['required', 'mimes:jpg,bmp,png'];
+        }
+        return $rules;
     }
 
     public function messages() :array 

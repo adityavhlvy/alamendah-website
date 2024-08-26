@@ -21,6 +21,9 @@
       </div>
   </div>
   <div class="w-64">
+      @isset($article)
+        <input type="hidden" name="img_old" value="{{ $article['img'] }}">
+      @endif
       <input type="file" name="img" class="w-full p-2 rounded-xl">
       @error('img')<p class="text-red-500 font-semibold self-start text-xs px-5">{{ $message }}</p>@enderror
   </div>

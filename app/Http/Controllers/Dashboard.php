@@ -227,6 +227,38 @@ class Dashboard extends Controller
     }
 
     public function updateBlog(BlogRequest $request, $id) {
+        $article = Article::with(['authors', 'subarticles'])->where('id', $id)->first();
 
+        // update data artikel
+        $article->title = $request->title;
+        if(isset($request->img)){
+            $formatImage = $request->file('img')->getClientOriginalExtension();
+            $img = $request->file('img')->storeAs('public/', explode('.', $article->img)[0].'.'.$formatImage);
+            $article->img = str_replace('public/', "", $img);
+        }
+        $article->save();
+
+        // update authors
+        $authors = $article->authors;
+        foreach($authors as $author) {
+            $author->delete();
+        }
+        foreach($request->author as $author) {
+            Author::create([
+                'article_id' => $article->id,
+                'user_id' => $author,
+            ]);
+        }
+
+        // update subarticle
+        $contents = $this->convertToArrayData($request->content, $article->id);
+        $subarticles = $article->subarticles;
+        foreach($subarticles as $subarticle) {
+            $subarticle->delete();
+        }
+        foreach($contents as $content) {
+            Subarticle::create($content);
+        }
+        return redirect()->route('dashboard.index')->with("success", "Artikel telah berhasil diubah");
     }
 }

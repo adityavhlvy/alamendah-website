@@ -20,7 +20,7 @@ const duplicatedForm = document.getElementById("Activity");
 const activity = document.getElementsByClassName("activity");
 
 button.addEventListener("click", () => {
-    const newActivity = activity.cloneNode(true);
+    const newActivity = activity[0].cloneNode(true);
     // Hapus value input dari duplikat baru
     newActivity.querySelector('input[type="text"]').value = "";
     newActivity.querySelector("textarea").value = "";
