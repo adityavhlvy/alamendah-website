@@ -38,6 +38,9 @@
   @if(Request::routeIs('main.activity.show'))
     <script src="{{ asset('js/packageshow.js') }}"></script>
   @endif
+  @if(Request::routeIs('main.article.show'))
+    <script src="{{ asset('js/carousel.js') }}"></script>
+  @endif
   @if(Request::routeIs('dashboard.index'))
     <script src="{{ asset('js/dashboard.js') }}"></script>
   @endif

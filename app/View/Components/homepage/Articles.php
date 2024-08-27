@@ -15,7 +15,7 @@ class Articles extends Component
     public $articles;
     public function __construct()
     {
-        $this->articles = Article::all()->toArray();
+        $this->articles = Article::with(['galleries'])->get()->toArray();
     }
 
     /**
