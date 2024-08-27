@@ -27,7 +27,7 @@ class BlogRequest extends FormRequest
             'content' => ['required'],
         ];
 
-        if($this->hasFile('img') || !$this->filled('img_old')) {
+        if(!$this->hasFile('img') && !$this->filled('img_old.*')) {
             $rules['img'] = ['required', 'mimes:jpg,bmp,png'];
         }
         return $rules;
@@ -37,7 +37,7 @@ class BlogRequest extends FormRequest
     {
         return [
             'required' => ':attribute harus ditambahkan!',
-            'img.mimes' => 'Tipe file yang diupload harus jpg, bmp, atau png',
+            'mimes' => 'Tipe file yang diupload harus jpg, bmp, atau png',
         ];
     }
 }

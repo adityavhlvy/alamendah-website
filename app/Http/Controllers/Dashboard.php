@@ -7,6 +7,7 @@ use App\Http\Requests\PackageRequest;
 use App\Models\Activity;
 use App\Models\Article;
 use App\Models\Author;
+use App\Models\Gallery;
 use App\Models\Packetoptions;
 use App\Models\Paket;
 use App\Models\PaketActivity;
@@ -33,6 +34,7 @@ class Dashboard extends Controller
         ]);
     }
 
+    // method pemformatan sub artikel
     private function convertToArrayData($contents, $articleid) {
         $contents = str_replace("<div>", "", $contents);
         $contents = str_replace("</div>", "", $contents);
@@ -55,25 +57,36 @@ class Dashboard extends Controller
     }
 
     public function postblog(BlogRequest $request) {
-        $articlelatest = Article::latest()->first();
-        $newId = $articlelatest->id + 1;
-        $formatImage = $request->file('img')->getClientOriginalExtension();
-        $img = $request->file('img')->storeAs('public/articles', $request->title." ".$newId.".".$formatImage);
-        $img = str_replace('public/', "", $img);
+        // post artikel
         $article = Article::create([
             'title' => $request->title,
-            'img' => $img
         ]);
-        $contents = $this->convertToArrayData($request->content, $article->id);
+
+        // post gallery
+        foreach($request->file('img') as $key => $requestimg) {
+            $formatImage = $requestimg->getClientOriginalExtension();
+            $img = $requestimg->storeAs('public/articles', $request->title." ".$article->id." ".$key.".".$formatImage);
+            $img = str_replace('public/', "", $img);
+            Gallery::create([
+                'article_id' => $article->id,
+                'img' => $img,
+            ]);
+        }
+
+        // post author
         foreach($request->author as $author) {
             Author::create([
                 'article_id' => $article->id,
                 'user_id' => $author
             ]);
         }
+
+        // post sub artikel
+        $contents = $this->convertToArrayData($request->content, $article->id);
         foreach($contents as $content) {
             Subarticle::create($content);
         }
+        
         return redirect()->route('dashboard.index');
     }
 
@@ -121,7 +134,12 @@ class Dashboard extends Controller
         $artikel = Article::where('id', $id)->first();
         $authors = $artikel->authors;
         $subarticles = $artikel->subarticles;
+        $galleries = $artikel->galleries;
+            
         $artikel->delete();
+        foreach($galleries as $gallery) {
+            $gallery->delete();
+        }
         foreach($authors as $author) {
             $author->delete();
         }
@@ -156,7 +174,7 @@ class Dashboard extends Controller
     }
 
     public function formUpdateBlog($id) {
-        $article = Article::with(['authors', 'subarticles'])->where('id', $id)->first();
+        $article = Article::with(['authors', 'subarticles', 'galleries'])->where('id', $id)->first();
         $subarticle = '';
         foreach($article->subarticles as $subarticles) {
             $subarticle .= "<strong>$subarticles->title</strong><br>$subarticles->description<br>";
@@ -227,16 +245,30 @@ class Dashboard extends Controller
     }
 
     public function updateBlog(BlogRequest $request, $id) {
-        $article = Article::with(['authors', 'subarticles'])->where('id', $id)->first();
+        $article = Article::with(['authors', 'subarticles', 'galleries'])->where('id', $id)->first();
 
         // update data artikel
         $article->title = $request->title;
-        if(isset($request->img)){
-            $formatImage = $request->file('img')->getClientOriginalExtension();
-            $img = $request->file('img')->storeAs('public/', explode('.', $article->img)[0].'.'.$formatImage);
-            $article->img = str_replace('public/', "", $img);
-        }
         $article->save();
+
+        // update data gallery
+        if(isset($request->img)){
+            // reset gallery jika terdapat data gambar yang diupload
+            $galleries = $article->galleries;
+            foreach($galleries as $gallery) {
+                $gallery->delete();
+            }
+            // post gallery
+            foreach($request->file('img') as $key => $requestimg) {
+                $formatImage = $requestimg->getClientOriginalExtension();
+                $img = $requestimg->storeAs('public/articles', $request->title." ".$article->id." ".$key.".".$formatImage);
+                $img = str_replace('public/', "", $img);
+                Gallery::create([
+                    'article_id' => $article->id,
+                    'img' => $img,
+                ]);
+            }
+        }
 
         // update authors
         $authors = $article->authors;

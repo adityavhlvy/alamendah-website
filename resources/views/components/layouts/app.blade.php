@@ -43,6 +43,7 @@
   @endif
   @if(Request::routeIs(['dashboard.blog', 'dashboard.form-update-article']))
     <script src="{{ asset('js/duplicate_form_author.js') }}"></script>
+    <script src="{{ asset('js/duplicate_gallery.js') }}"></script>
   @endif
   @if(Request::routeIs(['dashboard.package', 'dashboard.form-update-activity']))
     <script src="{{ asset('js/duplicate_form_typeactivity.js') }}"></script>

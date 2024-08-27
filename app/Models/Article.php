@@ -12,7 +12,6 @@ class Article extends Model
     use HasFactory;
     protected $fillable = [
         'title',
-        'img',
     ];
 
     public function subarticles() :HasMany
@@ -23,5 +22,10 @@ class Article extends Model
     public function authors() :HasMany
     {
         return $this->hasMany(Author::class);
+    }
+
+    public function galleries() :HasMany
+    {
+        return $this->hasMany(Gallery::class);
     }
 }
