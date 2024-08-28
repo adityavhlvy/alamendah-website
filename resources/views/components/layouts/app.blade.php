@@ -19,6 +19,9 @@
   <x-layouts.nav2 />
   <x-layouts.nav />
   {{ $slot }}
+  <div id="Load" class="bg-black fixed top-0 bottom-0 left-0 right-0 opacity-60 w-full h-full items-center justify-center hidden">
+    <x-svg.loading />
+  </div>
   <x-layouts.footer />
   @if(Request::routeIs('main.index'))
     <script src="{{ asset('js/time.js') }}"></script>
@@ -56,5 +59,6 @@
   <script src="{{ asset('js/qna.js') }}"></script>
   <script src="{{ asset('js/jquery.js') }}"></script>
   <script src="{{ asset('js/translate.js') }}"></script>
+  <script src="{{ asset('js/loading.js') }}"></script>
 </body>
 </html>

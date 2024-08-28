@@ -87,12 +87,16 @@ class Dashboard extends Controller
             Subarticle::create($content);
         }
         
-        return redirect()->route('dashboard.index');
+        return redirect()->route('dashboard.index')->with(['success' => "Artikel berhasil di posting"]);
     }
 
     public function postPackage(PackageRequest $request) {
         $packages = Paket::latest()->first();
-        $newId = $packages->id + 1;
+        if($packages) {
+            $newId = $packages->id + 1;
+        } else {
+            $newId = 1;
+        }
         $formatImage = $request->file('img_package')->getClientOriginalExtension();
         $img = $request->file('img_package')->storeAs('public/package', $request->package_name.$newId.".".$formatImage);
         $img = str_replace('public/', "", $img);
@@ -127,7 +131,7 @@ class Dashboard extends Controller
             ]);
         }
 
-        return redirect()->route('dashboard.index');
+        return redirect()->route('dashboard.index')->with(['success' => 'Paket terbaru sudah ditambahkan']);
     }
 
     public function deleteArtikel($id){
