@@ -48,6 +48,9 @@ Submit.addEventListener("click", () => {
     const Package = document.getElementById("Package");
     const Quantity = document.getElementById("Quantity");
     const Code = document.getElementById("Code");
+    const load = document.getElementById("Load");
+    load.classList.remove("hidden");
+    load.classList.add("flex");
     if (Date.value) {
         if (Package.value) {
             if (Quantity.value) {

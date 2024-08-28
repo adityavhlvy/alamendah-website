@@ -5,7 +5,10 @@
     <div class="flex md:flex-row flex-col gap-5 lg:gap-10 md:items-end">
         <x-booking.formfield :id="'Package'" :label="'Select Your Package'">
             <select name="package" id="Package" class="shadow-[0px_2px_6px_3px] shadow-dark-grey w-[12rem] sm:w-[15rem] lg:w-[20rem] text-xs sm:text-base rounded-xl p-2">
-              <option value="Alamendah Trip" selected>Alamendah Trip</option>
+                <option disabled selected>Pilih paket</option>
+                @foreach($packages as $package)
+                    <option value="{{ $package['name'] }}">{{ $package['name'] }}</option>
+                @endforeach
             </select>
         </x-booking.formfield>
         <x-booking.formfield :id="'Quantity'">
