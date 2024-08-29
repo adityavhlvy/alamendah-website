@@ -57,4 +57,11 @@ class Travel extends Controller
             'title' => 'Booking',
         ]);
     }
+
+    public function search(Request $request) {
+        return view('search', [
+            'title' => "Search",
+            'keywords' => $request->search
+        ]);
+    }
 }

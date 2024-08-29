@@ -54,6 +54,7 @@ Route::controller(App\Http\Controllers\Travel::class)->name('main.')->group(func
     Route::get('/activity/{id}', 'activityShow')->name('activity.show');
     Route::get('/article/{id}', 'articleShow')->name('article.show');
     Route::get('/booking', 'booking')->middleware(['auth'])->name('booking');
+    Route::post('/search', 'search')->name('search');
 });
 Route::get('/', function () {
     return redirect()->route('main.index');

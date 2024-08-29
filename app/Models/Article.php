@@ -28,4 +28,13 @@ class Article extends Model
     {
         return $this->hasMany(Gallery::class);
     }
+
+    public function scopeSearch($query, $keywords) 
+    {
+        return $query->where('title', 'LIKE', "%$keywords%")
+                     ->orWhereHas('subarticles', function ($query) use ($keywords) {
+                       $query->where('title', 'LIKE', "%$keywords%")
+                             ->orWhere('description', 'LIKE', "%$keywords%");
+                       });
+    }
 }

@@ -26,4 +26,15 @@ class Paket extends Model
     {
         return $this->hasMany(Packetoptions::class);
     }
+
+    public function scopeSearch($query, $keywords)
+    {
+        return $query->where('name', 'LIKE', "%$keywords%")
+                     ->orWhere('description', 'LIKE', "%$keywords%")
+                     ->orWhere('slogan', 'LIKE', "%$keywords")
+                     ->orWhereHas('paketactivities.activity', function ($query) use ($keywords) {
+                       $query->where('name', 'LIKE', "%$keywords%")
+                             ->orWhere('description', 'LIKE', "%$keywords%");
+                       });
+    }
 }
