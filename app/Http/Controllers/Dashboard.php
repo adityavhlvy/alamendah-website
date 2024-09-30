@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\BlogRequest;
 use App\Http\Requests\PackageRequest;
+use App\Http\Requests\updateUserStatusRequest;
 use App\Models\Activity;
 use App\Models\Article;
 use App\Models\Author;
@@ -12,6 +13,7 @@ use App\Models\Packetoptions;
 use App\Models\Paket;
 use App\Models\PaketActivity;
 use App\Models\Subarticle;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class Dashboard extends Controller
@@ -132,6 +134,31 @@ class Dashboard extends Controller
         }
 
         return redirect()->route('dashboard.index')->with(['success' => 'Paket terbaru sudah ditambahkan']);
+    }
+
+    public function changeUserStatus(updateUserStatusRequest $request) {
+        $user = User::with(['admin'])->where('id', $request->userid)->first();
+        $admin = $user->admin;
+        $admin->isAdmin = $request->isAdmin;
+        $admin->save();
+        return response()->json(['success' => $user->admin]);
+    }
+
+    public function deleteUser($id) {
+        $user = User::with(['verifiedaccount', 'author', 'admin'])->where('id', $id)->first();
+        $achievements = $user->admin->achievements;
+        foreach($achievements as $achievement) {
+            $achievement->delete();
+        }
+        $verifiedaccount = $user->verifiedaccount;
+        $author = $user->author;
+        $admin = $user->admin;
+        if($author) {
+            $author->delete();
+        } 
+        $user->delete();
+        $admin->delete();
+        return redirect()->back()->with('success', 'Pengguna berhasil dihapus');
     }
 
     public function deleteArtikel($id){

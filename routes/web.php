@@ -40,6 +40,7 @@ Route::middleware(['auth', 'admin'])->controller(App\Http\Controllers\Dashboard:
     Route::post('/dashboard/blog', 'postblog')->name('blogpost');
     Route::get('/dashboard/artikel/delete/{id}', 'deleteArtikel')->name("delete-article");
     Route::get('/dashboard/paket/delete/{id}', 'deletePaket')->name('delete-activity');
+    Route::get('/dashboard/user/delete/{id}', 'deleteUser')->name('delete-user');
     Route::get('/dashboard/package/{id}', 'formUpdatePackage')->name('form-update-activity');
     Route::post('/dashboard/package/update/{id}', 'updatePackage')->name('update-activity');
     Route::get('/dashboard/blog/{id}', 'formUpdateBlog')->name('form-update-article');

@@ -16,4 +16,9 @@
     :routeLabel="'Tambah Paket'"
     :routeName="'activity'"
   />
+  <x-admin.table 
+    :id="'User'" 
+    :hidden="'hidden'"
+    :routeName="'user'"
+  />
 </x-admin.layout-template>

@@ -45,6 +45,7 @@
     <script src="{{ asset('js/carousel.js') }}"></script>
   @endif
   @if(Request::routeIs('dashboard.index'))
+    <script src="{{ asset('js/changeUserStatus.js') }}"></script>
     <script src="{{ asset('js/dashboard.js') }}"></script>
   @endif
   @if(Request::routeIs(['dashboard.blog', 'dashboard.form-update-article']))

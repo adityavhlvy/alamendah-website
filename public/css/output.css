@@ -842,6 +842,18 @@ video {
   height: 100%;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
+.h-5 {
+  height: 1.25rem;
+}
+
+.h-8 {
+  height: 2rem;
+}
+
 .max-h-\[100px\] {
   max-height: 100px;
 }
@@ -872,6 +884,10 @@ video {
 
 .w-1\/2 {
   width: 50%;
+}
+
+.w-1\/3 {
+  width: 33.333333%;
 }
 
 .w-10 {
@@ -958,6 +974,10 @@ video {
   width: calc(100vw - 2.5rem);
 }
 
+.w-auto {
+  width: auto;
+}
+
 .w-full {
   width: 100%;
 }
@@ -966,12 +986,12 @@ video {
   width: 100vw;
 }
 
-.w-96 {
-  width: 24rem;
+.w-8 {
+  width: 2rem;
 }
 
-.w-auto {
-  width: auto;
+.min-w-16 {
+  min-width: 4rem;
 }
 
 .min-w-\[15rem\] {
@@ -980,22 +1000,6 @@ video {
 
 .min-w-full {
   min-width: 100%;
-}
-
-.min-w-10 {
-  min-width: 2.5rem;
-}
-
-.min-w-1 {
-  min-width: 0.25rem;
-}
-
-.min-w-12 {
-  min-width: 3rem;
-}
-
-.min-w-16 {
-  min-width: 4rem;
 }
 
 .max-w-24 {
@@ -1010,16 +1014,16 @@ video {
   max-width: 2rem;
 }
 
+.max-w-96 {
+  max-width: 24rem;
+}
+
 .max-w-\[100px\] {
   max-width: 100px;
 }
 
 .max-w-\[20rem\] {
   max-width: 20rem;
-}
-
-.max-w-96 {
-  max-width: 24rem;
 }
 
 .flex-shrink-0 {
@@ -1241,10 +1245,6 @@ video {
   overflow-y: scroll;
 }
 
-.text-wrap {
-  text-wrap: wrap;
-}
-
 .text-pretty {
   text-wrap: pretty;
 }
@@ -1275,10 +1275,6 @@ video {
 
 .rounded-xl {
   border-radius: 0.75rem;
-}
-
-.rounded-sm {
-  border-radius: 0.125rem;
 }
 
 .rounded-l-3xl {
@@ -1348,19 +1344,14 @@ video {
   border-color: rgb(169 169 169 / var(--tw-border-opacity));
 }
 
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.border-green-50 {
-  --tw-border-opacity: 1;
-  border-color: rgb(240 253 244 / var(--tw-border-opacity));
-}
-
 .border-green-500 {
   --tw-border-opacity: 1;
   border-color: rgb(34 197 94 / var(--tw-border-opacity));
+}
+
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
 .bg-black {
@@ -1398,6 +1389,11 @@ video {
   background-color: rgb(134 239 172 / var(--tw-bg-opacity));
 }
 
+.bg-green-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
+}
+
 .bg-green-leaves {
   --tw-bg-opacity: 1;
   background-color: rgb(46 139 87 / var(--tw-bg-opacity));
@@ -1421,9 +1417,14 @@ video {
   background-color: rgb(254 240 138 / var(--tw-bg-opacity));
 }
 
-.bg-green-400 {
+.bg-red-400 {
   --tw-bg-opacity: 1;
-  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+}
+
+.bg-red-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-20 {
@@ -1507,6 +1508,10 @@ video {
   padding: 2rem;
 }
 
+.p-1 {
+  padding: 0.25rem;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1580,6 +1585,11 @@ video {
 .py-\[6rem\] {
   padding-top: 6rem;
   padding-bottom: 6rem;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 
 .pb-10 {
@@ -1681,6 +1691,10 @@ video {
   line-height: 1rem;
 }
 
+.text-\[0\.4rem\] {
+  font-size: 0.4rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1757,6 +1771,15 @@ video {
 .text-yellow-700 {
   --tw-text-opacity: 1;
   color: rgb(161 98 7 / var(--tw-text-opacity));
+}
+
+.text-red-700 {
+  --tw-text-opacity: 1;
+  color: rgb(185 28 28 / var(--tw-text-opacity));
+}
+
+.text-\[0\.\] {
+  color: 0.;
 }
 
 .underline {
@@ -1995,6 +2018,10 @@ trix-toolbar .trix-dialogs {
     bottom: -5rem;
   }
 
+  .max-sm\:w-10 {
+    width: 2.5rem;
+  }
+
   .max-sm\:text-center {
     text-align: center;
   }
@@ -2023,6 +2050,10 @@ trix-toolbar .trix-dialogs {
 
   .sm\:h-24 {
     height: 6rem;
+  }
+
+  .sm\:h-8 {
+    height: 2rem;
   }
 
   .sm\:w-40 {
@@ -2071,6 +2102,10 @@ trix-toolbar .trix-dialogs {
 
   .sm\:w-auto {
     width: auto;
+  }
+
+  .sm\:w-8 {
+    width: 2rem;
   }
 
   .sm\:min-w-\[10rem\] {
@@ -2151,6 +2186,14 @@ trix-toolbar .trix-dialogs {
     padding: 2rem;
   }
 
+  .sm\:p-2 {
+    padding: 0.5rem;
+  }
+
+  .sm\:p-4 {
+    padding: 1rem;
+  }
+
   .sm\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -2174,6 +2217,11 @@ trix-toolbar .trix-dialogs {
   .sm\:py-2 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+  }
+
+  .sm\:py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
   }
 
   .sm\:text-left {
@@ -2297,6 +2345,10 @@ trix-toolbar .trix-dialogs {
 
   .md\:w-auto {
     width: auto;
+  }
+
+  .md\:w-\[90vw\] {
+    width: 90vw;
   }
 
   .md\:max-w-44 {

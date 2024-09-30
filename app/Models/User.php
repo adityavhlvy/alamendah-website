@@ -28,6 +28,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'address',
         'token',
         'isVerified',
+        'isOnline'
     ];
 
     public function verifiedaccount() :HasOne

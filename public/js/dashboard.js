@@ -17,7 +17,6 @@ Array.from(requestData.children).forEach((data) => {
             data.classList.remove("text-black");
             data.classList.add("bg-blue-sea");
             data.classList.add("text-white");
-            console.log(data.innerHTML);
             document.getElementById(data.innerHTML).classList.remove("hidden");
         }
     });

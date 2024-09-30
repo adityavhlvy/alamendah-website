@@ -41,8 +41,8 @@ class UserController extends Controller
     }
 
     public function register(StoreUserRequest $request) {
-        $token = hash('sha256', $request->password.$request->telephone);
-        
+        $token = hash('sha256', $request->password.$request->telephone.$request->email);
+        $request->merge(['isOnline' => false]);
         $user = User::create($request->all());
 
         Verifiedaccount::create([
@@ -136,6 +136,10 @@ class UserController extends Controller
 
         $credentials = $request->only('email', 'password');
         if(Auth::attempt($credentials)){
+            $user = User::where('email', $request->email)->first();
+            $user->isOnline = true;
+            $user->save();
+
             $request->session()->regenerate();
             return redirect()->route('main.index');
         }
@@ -145,6 +149,10 @@ class UserController extends Controller
     }
 
     public function logout() { 
+        $user = User::where('id', Auth::user()->id)->first();
+        $user->isOnline = false;
+        $user->save();
+
         Auth::logout();
         request()->session()->invalidate();
         request()->session()->regenerateToken();

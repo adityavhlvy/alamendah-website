@@ -4,6 +4,7 @@ namespace App\View\Components\admin;
 
 use App\Models\Article;
 use App\Models\Paket;
+use App\Models\User;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -15,7 +16,7 @@ class table extends Component
      */
     public $datas;
     public $keys;
-    public function __construct(public $id, public $hidden, public $routeAdd, public $routeLabel, public $routeName)
+    public function __construct(public $id, public $hidden, public $routeName)
     {
         if($id == "Artikel") {
             $this->datas = Article::with(['authors'])->get()->map(function ($item) {
@@ -40,6 +41,17 @@ class table extends Component
                 ];
             })->toArray();
             $this->keys = ['ID', 'Name', 'Price', 'Actions'];
+        } elseif ($id == "User") {
+            $this->datas = User::with(['admin'])->get()->map(function ($item) {
+                return [
+                    'ID' => $item->id,
+                    'Name' => $item->name,
+                    'Email' => $item->email,
+                    'Online' => (bool)$item->isOnline,
+                    'isAdmin' => (bool)$item->admin->isAdmin,
+                ];
+            })->toArray();
+            $this->keys = ['ID', 'Name', 'Email', 'Online', 'Admin', 'Actions'];
         }
     }
 
