@@ -33,5 +33,5 @@
         </span> people
     </p>
     <p class="text-base text-justify my-3 translate break-words">{{ $activity['description'] }}</p>
-    <a href="" class="bg-white text-black rounded-xl text-center p-3 max-w-44 font-bold">Book Now</a>
+    <a href="{{ route('main.booking') }}" class="bg-white text-black rounded-xl text-center p-3 max-w-44 font-bold">Book Now</a>
 </div>
