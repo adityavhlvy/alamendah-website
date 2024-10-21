@@ -19,7 +19,7 @@ jobs:
       - name: Setup SSH key
         uses: webfactory/ssh-agent@v0.7.0
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-private-key: ${{ secrets.hosting }}
 
       # Step 3: Install dependencies di server dan jalankan deployment
       - name: Deploy to server via SSH
