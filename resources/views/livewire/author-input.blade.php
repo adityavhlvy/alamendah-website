@@ -1,4 +1,3 @@
-@props(['author', 'admins', 'button-id', 'rotateButton'])
 <div class="author flex flex-row items-center gap-3">
     <select name="author[]" class="text-black rounded-xl border-none outline-none p-2 w-52">
       @isset($author)

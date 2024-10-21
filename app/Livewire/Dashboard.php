@@ -17,6 +17,7 @@ class Dashboard extends Component
     public $routeName;
     public $routeAdd;
     public $routeLabel;
+
     public function mount($id, $hidden, $routeName, $routeAdd = null, $routeLabel = null)
     {
         $this->id = $id;

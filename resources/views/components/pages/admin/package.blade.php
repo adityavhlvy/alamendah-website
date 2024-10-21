@@ -13,15 +13,15 @@
       @isset($datas)
         @foreach($datas['paketoptions'] as $option)
           @if($loop->first)
-            <x-multipleforms.select-options-package :buttonId="'Option-add'" :option="$option" />
+            <livewire:select-options :buttonId="'Option-add'" :option="$option">
           @else
-            <x-multipleforms.select-options-package :buttonId="'Option-remove'" :rotate="'rotate-45'" :option="$option" />
+            <livewire:select-options :buttonId="'Option-remove'" :rotate="'rotate-45'" :option="$option">
           @endif
         @endforeach
       @else
-        <x-multipleforms.select-options-package :buttonId="'Option-add'" />
+        <livewire:select-options :buttonId="'Option-add'">
       @endif
-    </div>  
+    </div>
   </div>
   <div class="">
     @isset($datas)
@@ -38,13 +38,13 @@
     @isset($datas)
       @foreach($datas['paketactivities'] as $paketactivities)
         @if($loop->first)
-          <x-multipleforms.activity-input :activity="$paketactivities['activity']"  />
+            <livewire:activity-input :activity="$paketactivities['activity']">
         @else
-          <x-multipleforms.activity-input :buttonId="'Activity-remove'" :rotateButton="'rotate-45'" :activity="$paketactivities['activity']" />
+            <livewire:activity-input :buttonId="'Activity-remove'" :rotateButton="'rotate-45'" :activity="$paketactivities['activity']">
         @endif
       @endforeach
     @else
-      <x-multipleforms.activity-input />
+        <livewire:activity-input>
     @endif
   </div>
 </x-dashboardform.template>

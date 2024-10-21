@@ -1,7 +1,7 @@
 <x-layouts.app :$title>
   @isset($article)
-    <x-pages.admin.blog :$article />
+    <livewire:blog :$article>
   @else
-    <x-pages.admin.blog />
+    <livewire:blog>
   @endif
 </x-layouts.app>

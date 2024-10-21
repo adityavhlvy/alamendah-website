@@ -1,4 +1,3 @@
-@props(['option'])
 <div class="option flex flex-col lg:flex-row gap-3">
     <div class="flex flex-row items-center gap-3">
       <div class="w-40 sm:w-auto">

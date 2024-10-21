@@ -13,7 +13,7 @@
         @error('img_activity.*')<p class="text-red-500 font-semibold self-start text-xs px-2 pt-2">{{ $message }}</p>@enderror
       </div>
       <div class="">
-        <textarea name="description_activity[]" id="" cols="25" rows="5" placeholder="Short Description" class="p-4 rounded-xl placeholder:text-black">@isset($activity) {{ $activity['description'] }} @endif</textarea>
+        <textarea name="description_activity[]" id="" cols="25" rows="5" placeholder="Short Description" class="p-4 rounded-xl placeholder:text-black">{{ $activity['description'] ?? '' }}</textarea>
         @error('description_activity.*')<p class="text-red-500 font-semibold self-start text-xs px-2 pt-2">{{ $message }}</p>@enderror
       </div>
     </div>

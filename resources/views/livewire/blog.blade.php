@@ -1,4 +1,3 @@
-@props(['article'])
 <x-dashboardform.template :routes="isset($article) ? route('dashboard.update-article', ['id' => $article['id']]) : route('dashboard.blogpost')">
   <div class="w-full">
       <input type="text" placeholder="Title" name="title" @isset($article) value="{{ $article['title'] }}" @endif class="text-black placeholder:text-black rounded-xl border-none outline-none p-2 w-full">
@@ -9,13 +8,13 @@
           @isset($article)
             @foreach($article['authors'] as $author)
               @if($loop->first)
-                <x-multipleforms.author-input :$admins :$author />
+                <livewire:author-input :$admins :$author>
               @else
-                <x-multipleforms.author-input :$admins :$author :buttonId="'author-remove'" :rotateButton="'rotate-45'" />
+                <livewire:author-input :$admins :$author :buttonId="'author-remove'" :rotateButton="'rotate-45'">
               @endif
             @endforeach
           @else
-            <x-multipleforms.author-input :$admins />
+            <livewire:author-input $admins>
           @endif
           @error('author')<p class="text-red-500 font-semibold self-start text-xs px-5">{{ $message }}</p>@enderror
       </div>
@@ -24,13 +23,13 @@
       @isset($article)
         @foreach($article['galleries'] as $gallery)
           @if($loop->first)
-            <x-multipleforms.image-input :img="$gallery['img']"/>
+            <livewire:image-input :img="$gallery['img']">
           @else
-            <x-multipleforms.image-input :img="$gallery['img']" :buttonId="'Image-remove'" :rotateButton="'rotate-45'"/>
+            <livewire:image-input :img="$gallery['img']" :buttonId="'Image-remove'" :rotateButton="'rotate-45'">
           @endif
         @endforeach
       @else
-        <x-multipleforms.image-input />
+        <livewire:image-input>
       @endif
       @error('img')<p class="text-red-500 font-semibold self-start text-xs px-5">{{ $message }}</p>@enderror
   </div>
