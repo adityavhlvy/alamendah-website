@@ -14,7 +14,7 @@
               @endif
             @endforeach
           @else
-            <livewire:author-input $admins>
+            <livewire:author-input :admins="$admins" >
           @endif
           @error('author')<p class="text-red-500 font-semibold self-start text-xs px-5">{{ $message }}</p>@enderror
       </div>

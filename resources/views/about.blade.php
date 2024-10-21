@@ -1,3 +1,3 @@
 <x-layouts.app :$title>
-  <x-about.index />
+    <livewire:admin>
 </x-layouts.app>

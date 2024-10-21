@@ -1,3 +1,3 @@
 <x-layouts.app :title="$title">
-   <x-listactivities.detail :$id />
+    <livewire:main-detail-activities :id="$id">
 </x-layouts.app>

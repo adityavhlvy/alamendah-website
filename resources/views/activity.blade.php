@@ -1,3 +1,3 @@
 <x-layouts.app :title="$title">
-  <x-homepage.list-activities />
+    <livewire:list-activities>
 </x-layouts.app>

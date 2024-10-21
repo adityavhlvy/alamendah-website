@@ -1,3 +1,3 @@
 <x-layouts.app :title="$title">
-  <x-articles.main-detail-articles :$id />
+    <livewire:main-detail-articles :id="$id">
 </x-layouts.app>
