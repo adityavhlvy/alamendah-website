@@ -57,11 +57,11 @@ Submit.addEventListener("click", () => {
                 let encodedMessage;
                 if (Code.value) {
                     encodedMessage = encodeURIComponent(
-                        `Hello, my name is Abdullah Ahmad Hafiz. I want to order some package that name is ${Package.value} in ${Date.value} with ${Quantity.value} people. I want to do that in ${tripType} I Have some redeem code, "${Code.value}".`
+                        `Hello, my name is ${username}. I want to order some package that name is ${Package.value} in ${Date.value} with ${Quantity.value} people. I want to do that in ${tripType} I Have some redeem code, "${Code.value}".`
                     );
                 } else {
                     encodedMessage = encodeURIComponent(
-                        `Hello, my name is Abdullah Ahmad Hafiz. I want to order some package that name is ${Package.value} in ${Date.value} with ${Quantity.value} people. I want to do that in ${tripType}`
+                        `Hello, my name is ${username}. I want to order some package that name is ${Package.value} in ${Date.value} with ${Quantity.value} people. I want to do that in ${tripType}`
                     );
                 }
                 const message = `https://wa.me/6285162784180?text=${encodedMessage}`;

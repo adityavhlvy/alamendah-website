@@ -16,7 +16,7 @@
   @endif
 </head>
 <body>
-  <x-layouts.nav2 />
+  <x-layouts.nav-2 />
   <x-layouts.nav />
   {{ $slot }}
   <div id="Load" class="bg-black fixed top-0 bottom-0 left-0 right-0 opacity-60 w-full h-full items-center justify-center hidden">

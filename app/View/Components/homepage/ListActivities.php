@@ -23,6 +23,6 @@ class ListActivities extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.homepage.list-activities');
+        return view('components.homepage.list-activities', ['message' => 'Hello, World!']);
     }
 }

@@ -6,8 +6,9 @@
   <x-homepage.activities />
 
   {{-- section activities --}}
-  <x-homepage.list-activities />
+  {{-- <x-homepage.list-activities /> --}}
+  <livewire:list-activities>
 
   {{-- section news & articles --}}
-  <x-homepage.articles />
+  <livewire:articles>
 </x-layouts.app>
