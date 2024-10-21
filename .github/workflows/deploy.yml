@@ -1,0 +1,35 @@
+name: Deploy Laravel Project
+
+on:
+  push:
+    branches:
+      - main  # Jalankan action setiap ada push ke branch 'main'
+
+jobs:
+  deploy:
+    name: Deploy to Server
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Setup SSH key
+      - name: Setup SSH key
+        uses: webfactory/ssh-agent@v0.8.1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      # Step 3: Install dependencies di server dan jalankan deployment
+      - name: Deploy to server via SSH
+        run: |
+          ssh -o StrictHostKeyChecking=no hafiz@88.222.213.120 '
+            cd /home/hafiz/alamendah &&
+            git pull origin main &&
+            composer install --no-interaction --prefer-dist --optimize-autoloader &&
+            php artisan migrate --force &&
+            php artisan cache:clear &&
+            php artisan config:cache &&
+            php artisan route:cache &&
+            php artisan view:cache'
