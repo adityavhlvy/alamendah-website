@@ -11,9 +11,10 @@ class calendar extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public $width, public $height, public $color = "white")
+    public $color;
+    public function __construct(public $width, public $height, $color = "white")
     {
-        //
+        $this->color = $color;
     }
 
     /**
