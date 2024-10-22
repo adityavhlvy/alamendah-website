@@ -4,7 +4,7 @@
             <h1 class="col-start-1 col-end-2 lg:col-end-4 font-bold text-6xl sm:text-8xl translate">{{ $activity['name'] }}</h1>
             <p class="col-start-1 col-end-2 lg:col-end-4 text-3xl translate">{{ $activity['slogan'] }}</p>
             <x-listactivities.detail-description :$activity />
-            <livewire:activity-list-type-detail :$activity>
+            <livewire:activity-list-type-detail :$activity></livewire:activity-list-type-detail>
         </div>
     </div>
 </div>

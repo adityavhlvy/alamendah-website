@@ -8,13 +8,13 @@
           @isset($article)
             @foreach($article['authors'] as $author)
               @if($loop->first)
-                <livewire:author-input :$admins :$author>
+                <livewire:author-input :$admins :$author></livewire:author-input>
               @else
-                <livewire:author-input :$admins :$author :buttonId="'author-remove'" :rotateButton="'rotate-45'">
+                <livewire:author-input :$admins :$author :buttonId="'author-remove'" :rotateButton="'rotate-45'"></livewire:author-input>
               @endif
             @endforeach
           @else
-            <livewire:author-input :admins="$admins" >
+            <livewire:author-input :admins="$admins" ></livewire:author-input>
           @endif
           @error('author')<p class="text-red-500 font-semibold self-start text-xs px-5">{{ $message }}</p>@enderror
       </div>
@@ -23,13 +23,13 @@
       @isset($article)
         @foreach($article['galleries'] as $gallery)
           @if($loop->first)
-            <livewire:image-input :img="$gallery['img']">
+            <livewire:image-input :img="$gallery['img']"></livewire:image-input>
           @else
-            <livewire:image-input :img="$gallery['img']" :buttonId="'Image-remove'" :rotateButton="'rotate-45'">
+            <livewire:image-input :img="$gallery['img']" :buttonId="'Image-remove'" :rotateButton="'rotate-45'"></livewire:image-input>
           @endif
         @endforeach
       @else
-        <livewire:image-input>
+        <livewire:image-input></livewire:image-input>
       @endif
       @error('img')<p class="text-red-500 font-semibold self-start text-xs px-5">{{ $message }}</p>@enderror
   </div>
