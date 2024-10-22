@@ -1,3 +1,3 @@
 <x-layouts.app :$title >
-  <x-pages.booking /></x-layouts.app>
+  <x-pages.booking />
 </x-layouts.app>

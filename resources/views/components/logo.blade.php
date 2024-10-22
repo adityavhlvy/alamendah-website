@@ -1,4 +1,3 @@
-<div class=" flex flex-col items-start justify-start ">
-    <span class="text-lg md:text-2xl xl:text-4xl ">Desa</span>
-    <span class="font-bold text-lg md:text-2xl xl:text-4xl text-green-leaves">Alamendah</span>
+<div class=" flex flex-row items-center justify-start ">
+    <img src="{{ asset("img/Dawala.png") }}" width="80" height="80"/>
 </div>

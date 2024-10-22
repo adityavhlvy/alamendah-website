@@ -88,7 +88,7 @@ class Dashboard extends Controller
         foreach($contents as $content) {
             Subarticle::create($content);
         }
-        
+
         return redirect()->route('dashboard.index')->with(['success' => "Artikel berhasil di posting"]);
     }
 
@@ -155,7 +155,7 @@ class Dashboard extends Controller
         $admin = $user->admin;
         if($author) {
             $author->delete();
-        } 
+        }
         $user->delete();
         $admin->delete();
         return redirect()->back()->with('success', 'Pengguna berhasil dihapus');
@@ -166,7 +166,7 @@ class Dashboard extends Controller
         $authors = $artikel->authors;
         $subarticles = $artikel->subarticles;
         $galleries = $artikel->galleries;
-            
+
         $artikel->delete();
         foreach($galleries as $gallery) {
             $gallery->delete();

@@ -10,5 +10,5 @@
       <input type="number" placeholder="Min.Person" name="minimum_person[]" class="placeholder:text-black rounded-xl border-none outline-none p-2 w-full" @isset($option) value="{{ $option['minimum_person'] }}" @endif>
       @error('minimum_person.*')<p class="text-red-500 font-semibold self-start text-xs px-2 pt-2">{{ $message }}</p>@enderror
     </div>
-    <button id="{{ $buttonId }}" type="button" class="rounded-full bg-white border-dark-grey border-[1px] px-[0.8rem] py-1 {{ $rotate }}">+</button>
+    <button id="{{ $buttonId }}" type="button" class="rounded-full bg-white border-dark-grey border-[1px] flex items-center justify-center {{ $rotate }}" style="width: 30px; height: 30px;">+</button>
 </div>
